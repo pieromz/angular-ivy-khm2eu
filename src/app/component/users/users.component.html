@@ -16,7 +16,8 @@
     <th class="thTabellaUtenti">COMUNE</th>
     <th class="thTabellaUtenti">ETA</th>
   </tr>
-  <tr *ngFor="let user of users">
+  <!--
+    <tr *ngFor="let user of users">
     <td class="tdTabellaUtenti">{{ user.nome }}</td>
     <td class="tdTabellaUtenti">{{ user.cognome }}</td>
     <td class="tdTabellaUtenti">{{ user.cf }}</td>
@@ -25,10 +26,9 @@
     <td class="tdTabellaUtenti">{{ user.comune }}</td>
     <td class="tdTabellaUtenti">{{ user.eta }}</td>
   </tr>
+  -->
 
-  <tr *ngFor="let utente of users">
-    <app-user [user-data]="utente"></app-user>
-  </tr>
+  <tr app-user *ngFor="let utente of users" [user-data]="utente"></tr>
 
   <!--
   <tr *ngFor="let user of users">
