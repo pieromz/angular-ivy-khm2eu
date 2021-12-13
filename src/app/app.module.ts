@@ -18,7 +18,7 @@ import { UserComponent } from './component/user/user.component';
 //SERVIZI
 import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
-import { UserService } from './component/users/user.service';
+import { UserService } from './component/services/user.service';
 
 @NgModule({
   imports: [BrowserModule, NgbModule, CommonModule],

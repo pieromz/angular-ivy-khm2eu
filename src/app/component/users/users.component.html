@@ -6,6 +6,10 @@
     {{
       footerTable
     }}
+    - Tot Elements =
+    {{
+      users.length
+    }}
   </caption>
   <tr>
     <th class="thTabellaUtenti">AZIONE</th>
@@ -30,7 +34,12 @@
   </tr>
 -->
 
-  <tr app-user *ngFor="let utente of users" [user-data]="utente"></tr>
+  <tr
+    app-user
+    *ngFor="let utente of users"
+    [user-data]="utente"
+    (onDeleteUser)="eliminaUtenteDaComponentFiglio($event)"
+  ></tr>
 </table>
 
 <br /><br />

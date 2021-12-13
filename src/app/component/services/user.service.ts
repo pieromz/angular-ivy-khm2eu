@@ -42,7 +42,7 @@ export class UserService {
   cancellaUtente(utente: any): void {
     const indiceDaEliminare = this.users.indexOf(utente);
     if (indiceDaEliminare >= 0) {
-      this.users.splice(indiceDaEliminare, 0);
+      this.users.splice(indiceDaEliminare, 1);
     } else {
       alert('UTENTE NON PRESENTE!!!');
     }

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { UserService } from '../users/user.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'tr[app-user]', //NOTA BENE PER UTILIZZARE LA COMPONENTE COME ATTRRIBUTO DEL TAG "TR"
@@ -8,12 +8,19 @@ import { UserService } from '../users/user.service';
 })
 export class UserComponent implements OnInit {
   @Input('user-data') user: any; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
+
+  @Output('onDeleteUser') userDeleted = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
   constructor(private service: UserService) {}
 
   ngOnInit() {}
 
   eliminaUtente(user: any): void {
-    alert('ELIMINARE UTENTE = ' + user.nome + '?');
-    this.service.cancellaUtente(user);
+    //alert('ELIMINARE UTENTE = ' + user.nome + '?');
+    //this.service.cancellaUtente(user);
+    var oggettoPerEmit = {
+      utente: user,
+      nomeUtente: user.nome,
+    };
+    this.userDeleted.emit(oggettoPerEmit);
   }
 }
