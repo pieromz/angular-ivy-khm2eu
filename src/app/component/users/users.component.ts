@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UserService } from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
   footerTable = 'Footer table utenti';
-  public users: any[] = [];
+  public users: Array<User> = [];
 
   constructor(private service: UserService) {}
   ngOnInit(): void {

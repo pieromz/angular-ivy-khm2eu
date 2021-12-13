@@ -3,14 +3,6 @@
   <button class="buttonEliminaUtente" (click)="eliminaUtente(user)">
     ELIMINA
   </button>
-
-  <button
-    *ngIf="user.id == 1"
-    class="fakeEliminaButton"
-    (click)="eliminaUtente(33)"
-  >
-    ELIMINA FAKE
-  </button>
 </td>
 <!--FINE OPERAZIONE ELIMINA UTENTE-->
 <td class="tdTabellaUtentiComponentUser">{{ user.nome }}</td>
