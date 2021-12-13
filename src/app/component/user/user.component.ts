@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from '../users/user.service';
 
 @Component({
   selector: 'tr[app-user]', //NOTA BENE PER UTILIZZARE LA COMPONENTE COME ATTRRIBUTO DEL TAG "TR"
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   @Input('user-data') user: any; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
-  constructor() {}
+  constructor(private service: UserService) {}
 
   ngOnInit() {}
 
-  eliminaUtente(user): void {
-    alert('ELIMINARE UTENTE = ' + user.nome);
+  eliminaUtente(user: any): void {
+    alert('ELIMINARE UTENTE = ' + user.nome + '?');
+    this.service.cancellaUtente(user);
   }
 }
