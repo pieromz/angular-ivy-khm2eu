@@ -6,8 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  @Input('user-data') user: any;
+  @Input('user-data') user: any; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
   constructor() {}
 
   ngOnInit() {}
+
+  eliminaUtente(user): void {
+    alert('ELIMINARE UTENTE = ' + user.nome);
+  }
 }

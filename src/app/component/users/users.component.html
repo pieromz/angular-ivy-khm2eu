@@ -8,16 +8,18 @@
     }}
   </caption>
   <tr>
+    <th class="thTabellaUtenti">AZIONE</th>
     <th class="thTabellaUtenti">NOME</th>
     <th class="thTabellaUtenti">COGNOME</th>
     <th class="thTabellaUtenti">CF</th>
     <th class="thTabellaUtenti">EMAIL</th>
     <th class="thTabellaUtenti">TELEFONO</th>
     <th class="thTabellaUtenti">COMUNE</th>
-    <th class="thTabellaUtenti">ETA</th>
+    <th class="thTabellaUtenti">ETA'</th>
   </tr>
+
   <!--
-    <tr *ngFor="let user of users">
+  <tr *ngFor="let user of users">
     <td class="tdTabellaUtenti">{{ user.nome }}</td>
     <td class="tdTabellaUtenti">{{ user.cognome }}</td>
     <td class="tdTabellaUtenti">{{ user.cf }}</td>
@@ -26,15 +28,9 @@
     <td class="tdTabellaUtenti">{{ user.comune }}</td>
     <td class="tdTabellaUtenti">{{ user.eta }}</td>
   </tr>
-  -->
+-->
 
   <tr app-user *ngFor="let utente of users" [user-data]="utente"></tr>
-
-  <!--
-  <tr *ngFor="let user of users">
-    <app-user [user-data]="user"></app-user>
-  </tr>
-  -->
 </table>
 
 <br /><br />

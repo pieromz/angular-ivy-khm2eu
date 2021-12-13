@@ -4,7 +4,16 @@
   text-align: center;
   background: gray;
   color: white;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-transform: capitalize;
+  width: 10%;
+}
+
+.buttonEliminaUtente {
+  background: red;
+  color: white;
+  font-weight: bold;
 }
