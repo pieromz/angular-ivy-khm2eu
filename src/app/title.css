@@ -1,3 +1,15 @@
 .titleClass {
   color: red;
 }
+
+.mainDiv {
+  width: 100%;
+}
+
+.usersDiv {
+  width: 100%;
+}
+
+.detailUserDiv {
+  width: 100%;
+}

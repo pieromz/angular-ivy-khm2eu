@@ -1,3 +1,14 @@
+<div class="mainDiv">
+  <div class="usersDiv">
+    <app-users></app-users>
+  </div>
+  <div class="detailUserDiv">
+    <app-user-detail></app-user-detail>
+  </div>
+</div>
+
+<br /><br /><br />
+
 <h1 class="titleClass">
   <span>{{titoloApp}}</span>
 </h1>
@@ -8,18 +19,6 @@
 <code>INDICE FUORI DAL TABELLA= {{indice}}</code>
 <br />
 <code>indiceTwoBinding FUORI DAL TABELLA= {{indiceTwoBinding}}</code>
-
-<br /><br /><br />
-<div class="mainDiv">
-  <div class="usersDiv">
-<app-users></app-users>
-  </div>
-  <div class="detailUserDiv">
-<app-user-detail></app-user-detail>
-  </div>
-</div>
-
-<br /><br /><br />
 
 <tabella nome="{{nome}}" cognome="{{cognome}}" [indice]="indice"></tabella>
 
