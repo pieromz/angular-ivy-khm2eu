@@ -1,27 +1,41 @@
+<h5>INIZIO COMPONENTE USERS</h5>
+<br /><br />
+
 <table>
-  <caption>
+  <caption class="captionTableUtenti">
     {{
-      title
+      footerTable
     }}
   </caption>
   <tr>
-    <th>Name</th>
-    <th>Last name</th>
-    <th>Fiscal Code</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Province</th>
-    <th>Age</th>
+    <th class="thTabellaUtenti">NOME</th>
+    <th class="thTabellaUtenti">COGNOME</th>
+    <th class="thTabellaUtenti">CF</th>
+    <th class="thTabellaUtenti">EMAIL</th>
+    <th class="thTabellaUtenti">TELEFONO</th>
+    <th class="thTabellaUtenti">COMUNE</th>
+    <th class="thTabellaUtenti">ETA</th>
   </tr>
-  <tr *ngFor="let user; for: users">
-    <td>{{ user.nome }}</td>
-    <td>{{ user.cognome }}</td>
-    <td>{{ user.cf }}</td>
-    <td>{{ user.email }}</td>
-    <td>{{ user.telefono }}</td>
-    <td>{{ user.provincia }}</td>
-    <td>{{ user.eta }}</td>
+  <tr *ngFor="let user of users">
+    <td class="tdTabellaUtenti">{{ user.nome }}</td>
+    <td class="tdTabellaUtenti">{{ user.cognome }}</td>
+    <td class="tdTabellaUtenti">{{ user.cf }}</td>
+    <td class="tdTabellaUtenti">{{ user.email }}</td>
+    <td class="tdTabellaUtenti">{{ user.telefono }}</td>
+    <td class="tdTabellaUtenti">{{ user.comune }}</td>
+    <td class="tdTabellaUtenti">{{ user.eta }}</td>
   </tr>
 
-  <tr app-user *ngFor="let user of users" [user-data]="user"></tr>
+  <tr *ngFor="let utente of users">
+    <app-user [user-data]="utente"></app-user>
+  </tr>
+
+  <!--
+  <tr *ngFor="let user of users">
+    <app-user [user-data]="user"></app-user>
+  </tr>
+  -->
 </table>
+
+<br /><br />
+<h5>FINE COMPONENTE USERS</h5>

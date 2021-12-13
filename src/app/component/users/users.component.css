@@ -2,3 +2,30 @@ table {
   border: 1px solid #c0c0c0;
   border-collapse: collapse;
 }
+
+.thTabellaUtenti {
+  font-size: 1rem;
+  border: 5px solid red;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: red;
+  background: black;
+}
+
+.tdTabellaUtenti {
+  font-size: 1rem;
+  border: 5px solid blue;
+  text-align: center;
+  background: gray;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-transform: capitalize;
+}
+
+.captionTableUtenti {
+  background: green;
+  color: white;
+  text-align: center;
+}

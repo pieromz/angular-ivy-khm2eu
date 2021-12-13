@@ -10,7 +10,7 @@ export class UserService {
         cf: 'MRTPRI91T29F262E',
         email: 'piero@gmail.com',
         telefono: '3427566914',
-        provincia: 'Modugno',
+        comune: 'Modugno',
         eta: 29,
       },
       {
@@ -19,7 +19,7 @@ export class UserService {
         cf: 'MARIAFANELLICF',
         email: 'fanelli@gmail.com',
         telefono: '1231231231',
-        provincia: 'Grumo appula',
+        comune: 'Grumo appula',
         eta: 30,
       },
       {
@@ -28,7 +28,7 @@ export class UserService {
         cf: 'ABCDEFGHILMNOPQRST',
         email: 'ricci.francesco@libero.it',
         telefono: '0805325662',
-        provincia: 'Roma',
+        comune: 'Roma',
         eta: 72,
       },
     ];
