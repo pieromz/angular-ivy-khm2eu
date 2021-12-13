@@ -8,7 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  @Input('user-data') user: User; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
+  @Input('user-data') user: User | undefined; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
 
   @Output('onDeleteUser') userDeleted = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
   constructor(private service: UserService) {}
