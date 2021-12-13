@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
+  title = 'Users';
+  public users: any[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private service: UserService) {}
+  ngOnInit(): void {
+    this.users = this.service.getUsers();
   }
-
 }
