@@ -1,0 +1,31 @@
+<br /><br /><br />
+<h1>ALERT COMPONENT</h1>
+<p *ngFor="let alert of avvisi">
+  <ngb-alert [type]="alert.type" (closed)="close(alert)">
+    {{ alert.message }}
+  </ngb-alert>
+</p>
+
+<!--globali-->
+<h1>ALERT GLOBALI</h1>
+<p *ngFor="let alert of erroriList">
+  <ngb-alert [type]="alert.type" (closed)="closeGlobalAlert(alert)">
+    GLOBALE: {{ alert.message }}
+  </ngb-alert>
+</p>
+
+<p>
+  <button type="button" class="btn btn-primary" (click)="impostaAlertDefault()">
+    RESET ALERT
+  </button>
+</p>
+
+<p>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="aggiungiAlert('danger', 'PIEROOOO!!!')"
+  >
+    AGGIUNGI ALERT
+  </button>
+</p>

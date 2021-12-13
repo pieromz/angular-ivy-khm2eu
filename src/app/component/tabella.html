@@ -1,0 +1,71 @@
+<alert [avvisi]="avvisi"></alert>
+
+<h1>NOME TABELLA = {{nome}}</h1>
+
+<code>INDICE NEL COMPONENT TABELLA= {{indice}}</code>
+
+<!--INIZIO CLICK-->
+<h1 (click)="increment()" class="incrementButton testoNonSelezionabile">
+  AGGIUNGI
+</h1>
+
+<h1 (click)="decrement()" class="decrementButton testoNonSelezionabile">
+  SOTTRAI
+</h1>
+<!--FINE CLICK-->
+
+<!--INIZIO NGIF-->
+<h1 *ngIf="indice>=5">MOSTRA SE >= 5</h1>
+<h1 *ngIf="indice<5">MOSTRA SE < 5</h1>
+
+<ng-template [ngIf]="indice<5" [ngIfElse]="loading">
+  <code>primo IF</code>
+</ng-template>
+
+<ng-template #loading>
+  <code>SECONDO IF</code>
+</ng-template>
+
+<!--FINE NGIF-->
+
+<!---INIZIO GESTIONE LISTA PERSONE-->
+<br /><br />
+<h1>INIZIO LISTA PERSONE</h1>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>COGNOME</th>
+        <th>ETA</th>
+        <th>CONTATTI</th>
+        <th>OPERAZIONI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of persone">
+        <td>{{persona.id}}</td>
+        <td>{{persona.nome}}</td>
+        <td>{{persona.cognome}}</td>
+        <td>{{persona.eta}}</td>
+        <td>
+          <ul style="padding-left: 15px">
+            <li *ngFor="let contatto of persona.contatti">
+              {{contatto.valore}}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <button (click)="eliminaPersona(persona.id)">ELIMINA</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+<!---FINE GESTIONE LISTA PERSONE-->
+
+<form-persona></form-persona>

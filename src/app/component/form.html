@@ -1,0 +1,25 @@
+<h3>FORM COMPONENT</h3>
+<!-- [formGroup]="checkoutForm"  -->
+<form>
+  <div>
+    <label for="nome"> NOME </label>
+    <input id="nome" type="text" formControlName="nome" />
+  </div>
+
+  <div>
+    <label for="cognome"> COGNOME </label>
+    <input id="cognome" type="text" formControlName="cognome" />
+  </div>
+
+  <div>
+    <label for="eta"> ETA </label>
+    <input id="eta" type="number" formControlName="eta" />
+  </div>
+
+  <div>
+    <label for="contatto"> CONTATTO </label>
+    <input id="contatto" type="number" formControlName="contatto" />
+  </div>
+
+  <button class="button" (click)="onSubmit()">SALVA</button>
+</form>
