@@ -49,5 +49,28 @@ export class UserService {
     }
   }
 
+  addUtenteBase(): void {
+    var utenteBase = {
+      id: this.getNextId(),
+      nome: 'UTENTE',
+      cognome: 'BASE',
+      cf: 'BASE CF',
+      email: 'utente.base@libero.it',
+      telefono: '555555555',
+      comune: 'Base',
+      eta: 99,
+    };
+
+    this.users.push(utenteBase);
+  }
+
+  getNextId(): number {
+    var nextId = 0;
+    for (var a = 0; a < this.users.length; a++) {
+      nextId = this.users[a].id;
+    }
+    return nextId + 1;
+  }
+
   constructor() {}
 }

@@ -13,6 +13,7 @@
   </caption>
   <tr>
     <th class="thTabellaUtenti">AZIONE</th>
+    <th class="thTabellaUtenti">ID</th>
     <th class="thTabellaUtenti">NOME</th>
     <th class="thTabellaUtenti">COGNOME</th>
     <th class="thTabellaUtenti">CF</th>
@@ -24,6 +25,7 @@
 
   <!--
   <tr *ngFor="let user of users">
+    <td class="tdTabellaUtenti">{{ user.id }}</td>
     <td class="tdTabellaUtenti">{{ user.nome }}</td>
     <td class="tdTabellaUtenti">{{ user.cognome }}</td>
     <td class="tdTabellaUtenti">{{ user.cf }}</td>
@@ -41,6 +43,10 @@
     (onDeleteUser)="eliminaUtenteDaComponentFiglio($event)"
   ></tr>
 </table>
+
+<button class="buttonAddClienteBase" (click)="addUtenteBase()" title="+ Utente">
+  ADD CLIENTE BASE
+</button>
 
 <br /><br />
 <h5>FINE COMPONENTE USERS</h5>

@@ -22,4 +22,8 @@ export class UsersComponent implements OnInit {
   eliminaUtenteDaComponentFiglio(oggettoPerEmit: any): void {
     this.service.cancellaUtente(oggettoPerEmit.utente);
   }
+
+  addUtenteBase(): void {
+    this.service.addUtenteBase();
+  }
 }
