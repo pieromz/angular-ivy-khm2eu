@@ -22,6 +22,15 @@ export class UserService {
         provincia: 'Grumo appula',
         eta: 30,
       },
+      {
+        nome: 'FRANCESCO',
+        cognome: 'RICCI',
+        cf: 'ABCDEFGHILMNOPQRST',
+        email: 'ricci.francesco@libero.it',
+        telefono: '0805325662',
+        provincia: 'Roma',
+        eta: 72,
+      },
     ];
   }
 

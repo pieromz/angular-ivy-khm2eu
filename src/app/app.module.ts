@@ -16,6 +16,7 @@ import { UsersComponent } from './component/users/users.component';
 //SERVIZI
 import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
+import { UserService } from './component/users/users.service';
 
 @NgModule({
   imports: [BrowserModule, NgbModule, CommonModule],
@@ -29,6 +30,6 @@ import { DatePipe } from '@angular/common';
     UsersComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
-  providers: [LogService, DatePipe],
+  providers: [LogService, DatePipe, UserService],
 })
 export class AppModule {}
