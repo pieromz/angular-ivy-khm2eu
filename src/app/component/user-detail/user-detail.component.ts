@@ -3,14 +3,15 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  @Input('user-selected') utenteSelezionato: boolean | undefined;
+  constructor() {}
 
-  @Input('user-selected') utenteSelezionato: boolean | undefined; 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  annullaModificaUtente() {
+    this.utenteSelezionato = false;
   }
-
 }
