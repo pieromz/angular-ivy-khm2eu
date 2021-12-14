@@ -1,9 +1,9 @@
 <div class="mainDiv">
   <div class="usersDiv">
-    <app-users></app-users>
+    <app-users [user-selected]="utenteSelezionato" (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"></app-users>
   </div>
   <div class="detailUserDiv">
-    <app-user-detail></app-user-detail>
+    <app-user-detail  [user-selected]="utenteSelezionato"></app-user-detail>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
 
@@ -11,6 +11,10 @@ export class UsersComponent implements OnInit {
   footerTable = 'Footer table utenti';
   public users: Array<User> = [];
 
+  @Output('onUpdateUser') userModifica = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
+
+  @Input('user-selected') utenteSelezionato: boolean | undefined;
+
   constructor(private service: UserService) {}
   ngOnInit(): void {
     this.users = this.service.getUsers();
@@ -21,6 +25,10 @@ export class UsersComponent implements OnInit {
 
   eliminaUtenteDaComponentFiglio(oggettoPerEmit: any): void {
     this.service.cancellaUtente(oggettoPerEmit.utente);
+  }
+
+  modificaUtenteDaComponenteFiglio(oggettoPerEmit: any): void {
+    this.userModifica.emit(oggettoPerEmit.utente);
   }
 
   addUtenteBase(): void {

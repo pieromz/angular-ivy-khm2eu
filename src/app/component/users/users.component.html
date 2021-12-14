@@ -41,6 +41,7 @@
     *ngFor="let utente of users"
     [user-data]="utente"
     (onDeleteUser)="eliminaUtenteDaComponentFiglio($event)"
+    (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
   ></tr>
 </table>
 

@@ -17,6 +17,15 @@
   background: rgb(38, 0, 255);
   color: white;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.buttonModificaUtente {
+  background: rgb(38, 0, 255);
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .fakeEliminaButton {
@@ -25,4 +34,5 @@
   font-size: 12px;
   margin-top: 10px;
   margin-bottom: 10px;
+  cursor: pointer;
 }

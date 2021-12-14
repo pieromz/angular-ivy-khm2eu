@@ -1,0 +1,33 @@
+.form-group {
+  border: 1px solid gray;
+  padding: 20px;
+  width: 500px;
+}
+
+.form-group > label {
+  width: 100px;
+}
+
+.form-group > input {
+  margin-left: 50px;
+}
+
+.buttonSalvaUtente {
+  text-align: center;
+  border: 2px solid black;
+  background: green;
+  color: white;
+  font-weight: bold;
+  margin-left: 50%;
+  cursor: pointer;
+}
+
+.cancellaFormUtente {
+  text-align: center;
+  border: 2px solid black;
+  background: red;
+  color: white;
+  font-weight: bold;
+  margin-left: 50%;
+  cursor: pointer;
+}

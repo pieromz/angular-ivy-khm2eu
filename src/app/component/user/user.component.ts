@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
   @Input('user-data') user: User | undefined; //DEFINITO PER RICEVERE I PARAMETRI DAL COMPONENT PADRE!
 
   @Output('onDeleteUser') userDeleted = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
+  @Output('onUpdateUser') userModifica = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
   constructor(private service: UserService) {}
 
   ngOnInit() {}
@@ -24,4 +25,15 @@ export class UserComponent implements OnInit {
     };
     this.userDeleted.emit(oggettoPerEmit);
   }
+
+
+  modificaUtente(user: User): void {
+    var oggettoPerEmit = {
+      utente: user,
+      nomeUtente: user.nome,
+    };
+    this.userModifica.emit(oggettoPerEmit);
+  }
+
+
 }
