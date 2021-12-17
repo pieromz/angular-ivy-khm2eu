@@ -10,6 +10,8 @@ export class UserDetailComponent implements OnInit {
   @Input('user-selected') utenteSelezionato: boolean | undefined;
   @Input('utente-da-modificare') utenteForm: User | undefined;
 
+  public testoProva: string;
+
   constructor() {}
 
   ngOnInit() {}
