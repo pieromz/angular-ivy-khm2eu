@@ -6,6 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { User } from '../class/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,7 +19,7 @@ export class UserDetailComponent implements OnInit, OnChanges {
 
   public testoProva: string;
 
-  constructor() {
+  constructor(private service: UserService) {
     this.utenteForm = new User();
   }
 
@@ -44,6 +45,14 @@ export class UserDetailComponent implements OnInit, OnChanges {
   }
 
   salvaUtente() {
-    alert(this.utenteForm.id);
+    if (this.utenteForm.id == undefined) {
+      this.service.insertUser(this.utenteForm);
+    } else {
+      this.modificaUtente();
+    }
+  }
+
+  modificaUtente() {
+    this.service.updateUser(this.utenteForm);
   }
 }

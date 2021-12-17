@@ -72,5 +72,19 @@ export class UserService {
     return nextId + 1;
   }
 
+  updateUser(user: User) {
+    const idx = this.users.findIndex((v) => v.id == user.id);
+    if (idx > 0) {
+      this.users[idx] = user;
+    } else {
+      alert('UTENTE DA MODIFICARE NON PRESENTE!!!');
+    }
+  }
+
+  insertUser(user: User) {
+    user.id = this.getNextId();
+    this.users.push(user);
+  }
+
   constructor() {}
 }
