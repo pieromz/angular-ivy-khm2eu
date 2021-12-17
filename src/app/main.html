@@ -1,9 +1,16 @@
 <div class="mainDiv">
   <div class="usersDiv">
-    <app-users [user-selected]="utenteSelezionato" (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"></app-users>
+    <app-users
+      [user-selected]="utenteSelezionato"
+      (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
+    ></app-users>
   </div>
   <div class="detailUserDiv">
-    <app-user-detail  [user-selected]="utenteSelezionato" [utente-da-modificare]="utenteDaModificare"></app-user-detail>
+    <app-user-detail
+      *ngIf="utenteDaModificare.id>0"
+      [user-selected]="utenteSelezionato"
+      [utente-da-modificare]="utenteDaModificare"
+    ></app-user-detail>
   </div>
 </div>
 
