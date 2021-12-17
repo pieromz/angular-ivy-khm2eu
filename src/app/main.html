@@ -4,6 +4,9 @@
       [user-selected]="utenteSelezionato"
       (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
     ></app-users>
+
+    <button (click)="aggiungiUtenteDaForm()">AGGIUNGI UTENTE DA FORMA</button>
+
   </div>
   <div class="detailUserDiv">
     <app-user-detail

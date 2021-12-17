@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from './component/class/user';
-import { UserInterface } from './component/model/userInterface';
 import { GlobalConstants } from './global/constants';
 
 @Component({
@@ -25,6 +24,10 @@ export class MainComponent {
   constructor() {
     this.nome = 'PIERO';
     this.cognome = 'MARTUCCI ZECCA';
+  }
+
+  aggiungiUtenteDaForm() {
+    this.utenteDaModificare = new User();
     this.utenteSelezionato = true;
   }
 

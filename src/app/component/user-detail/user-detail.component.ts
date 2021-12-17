@@ -6,7 +6,6 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { User } from '../class/user';
-import { UserInterface } from '../model/userInterface';
 
 @Component({
   selector: 'app-user-detail',

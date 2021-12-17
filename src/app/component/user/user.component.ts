@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../class/user';
-import { UserInterface } from '../model/userInterface';
 import { UserService } from '../services/user.service';
 
 @Component({
