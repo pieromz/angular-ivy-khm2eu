@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //COMPONENTI
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { MainComponent } from './main.component';
 import { TabellaComponent } from './component/tabella';
 import { AlertComponent } from './component/alert';
 import { FormComponent } from './component/form';
@@ -19,13 +19,12 @@ import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
 import { UserService } from './component/services/user.service';
 
-
 @NgModule({
   imports: [BrowserModule, NgbModule, CommonModule],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
     AppComponent,
-    HelloComponent,
+    MainComponent,
     TabellaComponent,
     AlertComponent,
     FormComponent,

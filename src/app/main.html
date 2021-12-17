@@ -3,7 +3,7 @@
     <app-users [user-selected]="utenteSelezionato" (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"></app-users>
   </div>
   <div class="detailUserDiv">
-    <app-user-detail  [user-selected]="utenteSelezionato"></app-user-detail>
+    <app-user-detail  [user-selected]="utenteSelezionato" [utente-da-modificare]="utenteDaModificare"></app-user-detail>
   </div>
 </div>
 

@@ -14,14 +14,14 @@
 }
 
 .buttonEliminaUtente {
-  background: rgb(38, 0, 255);
+  background: red;
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 .buttonModificaUtente {
-  background: rgb(38, 0, 255);
+  background: green;
   color: white;
   font-weight: bold;
   margin-top: 10px;

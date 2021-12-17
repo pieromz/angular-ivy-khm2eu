@@ -1,15 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from './component/model/user';
 import { GlobalConstants } from './global/constants';
 
 @Component({
-  selector: 'hello',
-  templateUrl: './title.html',
-  styleUrls: ['./title.css'],
+  selector: 'main-app',
+  templateUrl: './main.html',
+  styleUrls: ['./main.css'],
 })
-export class HelloComponent {
+export class MainComponent {
   @Input() versioneAngular: string;
 
   public utenteSelezionato: boolean = false;
+  public utenteDaModificare: User;
 
   nome: string;
   cognome: string;
@@ -24,8 +26,9 @@ export class HelloComponent {
     this.cognome = 'MARTUCCI ZECCA';
   }
 
-  modificaUtenteDaComponenteFiglio(oggettoPerEmit: any): void {
+  modificaUtenteDaComponenteFiglio(oggettoPerEmit: User): void {
     if (oggettoPerEmit.id > 0) {
+      this.utenteDaModificare = oggettoPerEmit;
       this.utenteSelezionato = true;
     }
   }
