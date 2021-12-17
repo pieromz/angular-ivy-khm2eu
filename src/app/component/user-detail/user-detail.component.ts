@@ -20,16 +20,7 @@ export class UserDetailComponent implements OnInit, OnChanges {
   public testoProva: string;
 
   constructor() {
-    this.utenteForm = {
-      id: undefined,
-      nome: '',
-      cognome: '',
-      cf: '',
-      email: '',
-      telefono: '',
-      comune: '',
-      eta: undefined,
-    };
+    this.utenteForm = new User();
   }
 
   ngOnInit() {}
