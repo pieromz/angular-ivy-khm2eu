@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-/*import { FormsModule } from '@angular/forms';*/
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +20,7 @@ import { DatePipe } from '@angular/common';
 import { UserService } from './component/services/user.service';
 
 @NgModule({
-  imports: [BrowserModule, NgbModule, CommonModule],
+  imports: [BrowserModule, NgbModule, CommonModule, FormsModule],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
     AppComponent,

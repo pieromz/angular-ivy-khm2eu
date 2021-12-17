@@ -7,7 +7,12 @@
   <form>
     <div class="form-group">
       <label for="idUtente">ID:</label>
-      <input name="idUtente" id="idUtente" type="text" />
+      <input
+        [ng-model]="utenteForm.nome"
+        name="idUtente"
+        id="idUtente"
+        type="text"
+      />
     </div>
 
     <div class="form-group">
