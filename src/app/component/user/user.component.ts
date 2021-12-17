@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from '../model/user';
+import { User } from '../class/user';
+import { UserInterface } from '../model/userInterface';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -26,7 +27,6 @@ export class UserComponent implements OnInit {
     this.userDeleted.emit(oggettoPerEmit);
   }
 
-
   modificaUtente(user: User): void {
     var oggettoPerEmit = {
       utente: user,
@@ -34,6 +34,4 @@ export class UserComponent implements OnInit {
     };
     this.userModifica.emit(oggettoPerEmit);
   }
-
-
 }

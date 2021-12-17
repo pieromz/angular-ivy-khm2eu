@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { User } from '../model/user';
+import { User } from '../class/user';
+import { UserInterface } from '../model/userInterface';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -28,7 +29,9 @@ export class UsersComponent implements OnInit {
   }
 
   modificaUtenteDaComponenteFiglio(oggettoPerEmit: any): void {
-    this.userModifica.emit(oggettoPerEmit.utente);
+    //ATTENZIONE! effettuo una copia dell'oggetto
+    const userCopy = Object.assign({}, oggettoPerEmit.utente);
+    this.userModifica.emit(userCopy);
   }
 
   addUtenteBase(): void {

@@ -28,6 +28,18 @@
   background: red;
   color: white;
   font-weight: bold;
-  margin-left: 50%;
+  margin-left: 10%;
   cursor: pointer;
+  float: left;
+}
+
+.pulisciFormUtente{
+  text-align: center;
+  border: 2px solid black;
+  background: white;
+  color: black;
+  font-weight: bold;
+  margin-left: 10%;
+  cursor: pointer;
+  float: left;
 }

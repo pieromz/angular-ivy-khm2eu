@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from './component/model/user';
+import { User } from './component/class/user';
+import { UserInterface } from './component/model/userInterface';
 import { GlobalConstants } from './global/constants';
 
 @Component({
@@ -11,7 +12,7 @@ export class MainComponent {
   @Input() versioneAngular: string;
 
   public utenteSelezionato: boolean = false;
-  public utenteDaModificare: User;
+  public utenteDaModificare: User = new User();
 
   nome: string;
   cognome: string;
@@ -24,6 +25,7 @@ export class MainComponent {
   constructor() {
     this.nome = 'PIERO';
     this.cognome = 'MARTUCCI ZECCA';
+    this.utenteSelezionato = true;
   }
 
   modificaUtenteDaComponenteFiglio(oggettoPerEmit: User): void {

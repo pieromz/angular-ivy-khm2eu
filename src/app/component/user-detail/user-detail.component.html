@@ -1,56 +1,101 @@
 <div *ngIf="utenteSelezionato">
   <h1>
-    UTENTE (ID {{ utenteForm.id }}) - {{ utenteForm.nome }} -
+    UTENTE (ID {{ utenteForm.id }}) - {{ utenteForm.nome }}
     {{ utenteForm.cognome }}
   </h1>
 
   <form>
     <div class="form-group">
       <label for="idUtente">ID:</label>
-      <input name="idUtente" id="idUtente" type="text" />
+      <input
+        [(ngModel)]="utenteForm.id"
+        name="idUtente"
+        id="idUtente"
+        type="number"
+        disabled="true"
+      />
     </div>
 
     <div class="form-group">
       <label for="nomeUtente">Nome:</label>
-      <input name="nomeUtente" id="nomeUtente" type="text" />
+      <input
+        [(ngModel)]="utenteForm.nome"
+        name="nomeUtente"
+        id="nomeUtente"
+        type="text"
+      />
     </div>
 
     <div class="form-group">
       <label for="cognomeUtente">Cognome:</label>
-      <input name="cognomeUtente" id="cognomeUtente" type="text" />
+      <input
+        [(ngModel)]="utenteForm.cognome"
+        name="cognomeUtente"
+        id="cognomeUtente"
+        type="text"
+      />
     </div>
 
     <div class="form-group">
       <label for="cfUtente">CF:</label>
-      <input name="cfUtente" id="cfUtente" type="text" />
+      <input
+        [(ngModel)]="utenteForm.cf"
+        name="cfUtente"
+        id="cfUtente"
+        type="text"
+      />
     </div>
 
     <div class="form-group">
       <label for="emailUtente">Email:</label>
-      <input name="emailUtente" id="emailUtente" type="email" />
+      <input
+        [(ngModel)]="utenteForm.email"
+        name="emailUtente"
+        id="emailUtente"
+        type="email"
+      />
     </div>
 
     <div class="form-group">
       <label for="telefonoUtente">Telefono:</label>
-      <input name="telefonoUtente" id="telefonoUtente" type="tel" />
+      <input
+        [(ngModel)]="utenteForm.telefono"
+        name="telefonoUtente"
+        id="telefonoUtente"
+        type="tel"
+      />
     </div>
 
     <div class="form-group">
       <label for="comuneUtente">Comune:</label>
-      <input name="comuneUtente" id="comuneUtente" type="text" />
+      <input
+        [(ngModel)]="utenteForm.comune"
+        name="comuneUtente"
+        id="comuneUtente"
+        type="text"
+      />
     </div>
 
     <div class="form-group">
       <label for="etaUtente">Età:</label>
-      <input name="etaUtente" id="etaUtente" type="number" />
+      <input
+        [(ngModel)]="utenteForm.eta"
+        name="etaUtente"
+        id="etaUtente"
+        type="number"
+      />
     </div>
 
     <div class="form-group">
-      <button class="buttonSalvaUtente">SALVA</button>
+      <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
     </div>
   </form>
 
-  <div class="form-group">
+  <div class="form-group" style="height: 80px;">
+    <button class="pulisciFormUtente" (click)="svuotaCampiForm()">
+      PULISCI FORM
+    </button>
+
     <button class="cancellaFormUtente" (click)="annullaModificaUtente()">
       ANNULLA
     </button>
