@@ -16,7 +16,7 @@ import { UserComponent } from './component/user/user.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
 //SERVIZI
 import { LogService } from './shared/log.service';
-/*import { DatePipe } from '@angular/common';*/
+import { DatePipe } from '@angular/common';
 import { UserService } from './component/services/user.service';
 
 @NgModule({
@@ -33,6 +33,6 @@ import { UserService } from './component/services/user.service';
     UserDetailComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
-  providers: [LogService, /*DatePipe,*/ UserService],
+  providers: [LogService, DatePipe, UserService],
 })
 export class AppModule {}
