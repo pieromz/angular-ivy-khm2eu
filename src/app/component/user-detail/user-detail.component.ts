@@ -17,38 +17,29 @@ export class UserDetailComponent implements OnInit, OnChanges {
   @Input('user-selected') utenteSelezionato: boolean | undefined;
   @Input('utente-da-modificare') utenteForm: User;
 
-  public testoProva: string;
-
-  constructor(private service: UserService) {
-    this.utenteForm = new User();
-  }
+  constructor(private service: UserService) {}
 
   ngOnInit() {}
 
-  annullaModificaUtente() {
-    this.svuotaCampiForm();
+  annullaModificaUtente(form) {
+    this.svuotaCampiForm(form);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('PMZ - ' + JSON.stringify(changes));
   }
 
-  svuotaCampiForm() {
-    this.utenteForm.id = undefined;
-    this.utenteForm.nome = '';
-    this.utenteForm.cognome = '';
-    this.utenteForm.cf = '';
-    this.utenteForm.email = '';
-    this.utenteForm.telefono = '';
-    this.utenteForm.comune = '';
-    this.utenteForm.eta = undefined;
+  svuotaCampiForm(form) {
+    form.reset();
   }
 
   salvaUtente() {
     if (this.utenteForm.id == undefined) {
       this.service.insertUser(this.utenteForm);
+      this.utenteForm = new User();
     } else {
       this.modificaUtente();
+      this.utenteForm = new User();
     }
   }
 

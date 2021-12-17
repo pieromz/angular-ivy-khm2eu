@@ -18,8 +18,9 @@
   background: green;
   color: white;
   font-weight: bold;
-  margin-left: 50%;
+  margin-left: 10%;
   cursor: pointer;
+  float: left;
 }
 
 .cancellaFormUtente {
@@ -33,7 +34,7 @@
   float: left;
 }
 
-.pulisciFormUtente{
+.pulisciFormUtente {
   text-align: center;
   border: 2px solid black;
   background: white;

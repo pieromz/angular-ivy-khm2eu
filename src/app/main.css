@@ -13,3 +13,20 @@
 .detailUserDiv {
   width: 100%;
 }
+
+.buttonAggiungiUtente {
+  background: yellow;
+  color: black;
+  border: 5px solid orange;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttonNascondiForm {
+  margin-left: 20px;
+  background: orange;
+  color: black;
+  border: 5px solid red;
+  font-weight: bold;
+  cursor: pointer;
+}

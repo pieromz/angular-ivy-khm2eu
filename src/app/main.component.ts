@@ -31,6 +31,10 @@ export class MainComponent {
     this.utenteSelezionato = true;
   }
 
+  nascondiForm() {
+    this.utenteSelezionato = false;
+  }
+
   modificaUtenteDaComponenteFiglio(oggettoPerEmit: User): void {
     if (oggettoPerEmit.id > 0) {
       this.utenteDaModificare = oggettoPerEmit;

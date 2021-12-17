@@ -5,12 +5,21 @@
       (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
     ></app-users>
 
-    <button (click)="aggiungiUtenteDaForm()">AGGIUNGI UTENTE DA FORMA</button>
+    <button class="buttonAggiungiUtente" (click)="aggiungiUtenteDaForm()">
+      AGGIUNGI NUOVO UTENTE
+    </button>
 
+    <button
+      *ngIf="utenteSelezionato"
+      class="buttonNascondiForm"
+      (click)="nascondiForm()"
+    >
+      NASCONDI FORM
+    </button>
   </div>
   <div class="detailUserDiv">
     <app-user-detail
-      *ngIf="utenteDaModificare.id>0"
+      *ngIf="utenteSelezionato"
       [user-selected]="utenteSelezionato"
       [utente-da-modificare]="utenteDaModificare"
     ></app-user-detail>
