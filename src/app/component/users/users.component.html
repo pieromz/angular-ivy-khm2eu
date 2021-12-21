@@ -1,6 +1,13 @@
 <h5>INIZIO COMPONENTE USERS</h5>
 <br /><br />
 
+<h5>DATA CURRENT: {{ dataOdierna | date: 'dd/mm/yyyy HH:mm:ss' }}</h5>
+<h5>DATA SHORT: {{ dataOdierna | date: 'long' }}</h5>
+<button (click)="refreshData()" class="buttonRefreshData">REFRESH DATA</button>
+
+<h1>Stringa : {{ stringProva | uppercase | titlecase }}</h1>
+<!--Titlecase = Prima lettere di ogni parola in Maiuscolo-->
+
 <table>
   <caption class="captionTableUtenti">
     {{

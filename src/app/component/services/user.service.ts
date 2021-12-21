@@ -74,7 +74,7 @@ export class UserService {
 
   updateUser(user: User) {
     const idx = this.users.findIndex((v) => v.id == user.id);
-    if (idx > 0) {
+    if (idx >= 0) {
       this.users[idx] = user;
     } else {
       alert('UTENTE DA MODIFICARE NON PRESENTE!!!');

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { User } from '../class/user';
 import { UserService } from '../services/user.service';
 
@@ -11,6 +12,10 @@ export class UsersComponent implements OnInit {
   footerTable = 'Footer table utenti';
   public users: Array<User> = [];
 
+  public dataOdierna: Date = new Date;
+  private subscription: Subscription = new Subscription();
+  public stringProva: string = 'prova piero';
+
   @Output('onUpdateUser') userModifica = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
 
   @Input('user-selected') utenteSelezionato: boolean | undefined;
@@ -18,6 +23,7 @@ export class UsersComponent implements OnInit {
   constructor(private service: UserService) {}
   ngOnInit(): void {
     this.users = this.service.getUsers();
+    this.dataOdierna= new Date;
     /*if (this.users.length > 0) {
       this.users.splice(0, 1); //rimuovo il primo elemento della lista di utenti se presente almeno un utente
     }*/
@@ -36,4 +42,15 @@ export class UsersComponent implements OnInit {
   addUtenteBase(): void {
     this.service.addUtenteBase();
   }
+
+/*INIZIO AGGIORNAMENTO DATA*/
+
+ refreshData(){
+  this.dataOdierna= new Date;
+ }
+
+
+/*FINE AGGIORNAMENTO DATA*/
+
+
 }
