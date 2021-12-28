@@ -15,8 +15,11 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit, OnChanges {
-  @Input('user-selected') utenteSelezionato: boolean | undefined;
-  @Input('utente-da-modificare') utenteForm: User;
+  //@Input('user-selected') utenteSelezionato: boolean | undefined;
+  //@Input('utente-da-modificare') utenteForm: User;
+
+  public utenteSelezionato: boolean | undefined;
+  public utenteForm: User;
 
   public utenti: Array<User> = [];
 
@@ -29,7 +32,11 @@ export class UserDetailComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.utenti = this.service.getUsers();
     this.route.params.subscribe((params) => {
-      this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+      if (params.id != undefined && params.id != null) {
+        this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+      } else {
+        this.utenteForm = this.service.getUtenteBasePerInserimento();
+      }
     });
   }
 

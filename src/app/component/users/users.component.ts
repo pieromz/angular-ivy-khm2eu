@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { User } from '../class/user';
 import { UserService } from '../services/user.service';
@@ -12,7 +13,7 @@ export class UsersComponent implements OnInit {
   footerTable = 'Footer table utenti';
   public users: Array<User> = [];
 
-  public dataOdierna: Date = new Date;
+  public dataOdierna: Date = new Date();
   private subscription: Subscription = new Subscription();
   public stringProva: string = 'prova piero';
 
@@ -20,10 +21,10 @@ export class UsersComponent implements OnInit {
 
   @Input('user-selected') utenteSelezionato: boolean | undefined;
 
-  constructor(private service: UserService) {}
+  constructor(private service: UserService, private routeNavigate: Router) {}
   ngOnInit(): void {
     this.users = this.service.getUsers();
-    this.dataOdierna= new Date;
+    this.dataOdierna = new Date();
     /*if (this.users.length > 0) {
       this.users.splice(0, 1); //rimuovo il primo elemento della lista di utenti se presente almeno un utente
     }*/
@@ -43,14 +44,15 @@ export class UsersComponent implements OnInit {
     this.service.addUtenteBase();
   }
 
-/*INIZIO AGGIORNAMENTO DATA*/
+  /*INIZIO AGGIORNAMENTO DATA*/
 
- refreshData(){
-  this.dataOdierna= new Date;
- }
+  refreshData() {
+    this.dataOdierna = new Date();
+  }
 
+  addNuovoCliente() {
+    this.routeNavigate.navigateByUrl('/users/new');
+  }
 
-/*FINE AGGIORNAMENTO DATA*/
-
-
+  /*FINE AGGIORNAMENTO DATA*/
 }

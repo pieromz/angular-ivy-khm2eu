@@ -73,6 +73,20 @@ export class UserService {
     this.users.push(utenteBase);
   }
 
+  getUtenteBasePerInserimento(): User {
+    var utenteBase = {
+      id: null,
+      nome: '',
+      cognome: '',
+      cf: '',
+      email: '',
+      telefono: '',
+      comune: '',
+      eta: null,
+    };
+    return utenteBase;
+  }
+
   getNextId(): number {
     var nextId = 0;
     for (var a = 0; a < this.users.length; a++) {
