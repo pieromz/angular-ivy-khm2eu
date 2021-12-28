@@ -1,16 +1,16 @@
 <div>
   <h1 (click)="tornaHomePage()" class="linkHomePAge">TORNA HOME</h1>
 
-  <h1>
-    UTENTE (ID {{ utenteForm.id }}) - {{ utenteForm.nome }}
-    {{ utenteForm.cognome }}
+  <h1 *ngIf="utenteForm">
+    UTENTE (ID {{ utenteForm?.id }}) - {{ utenteForm?.nome }}
+    {{ utenteForm?.cognome }}
   </h1>
 
   <div class="row containerPulsantiDettaglioFormCliente">
     <div class="col-4">
       <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
     </div>
-    <div class="col-4">
+    <div class="col-4" style="text-align: center">
       <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
         PULISCI FORM
       </button>
@@ -27,7 +27,7 @@
   </div>
 
   <form #f="ngForm">
-    {{ f.form.value | json }}
+    FORM VALUE: {{ f.form.value | json }}
     <div class="form-group">
       <label for="idUtente">ID:</label>
       <input
@@ -130,7 +130,7 @@
     <div class="col-4">
       <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
     </div>
-    <div class="col-4">
+    <div class="col-4" style="text-align: center">
       <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
         PULISCI FORM
       </button>

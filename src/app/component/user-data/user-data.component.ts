@@ -22,4 +22,8 @@ export class UserDataComponent implements OnInit {
       this.dettaglioUtente = this.service.getUserById(+params.id); //+ implica il cast a number
     });
   }
+
+  tornaHomePage() {
+    this.routeNavigate.navigateByUrl('/users');
+  }
 }

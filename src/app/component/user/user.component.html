@@ -1,7 +1,7 @@
 <!--INIZIO OPERAZIONE ELIMINA UTENTE-->
 <td scope="row" class="tdTabellaUtentiComponentUser">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
       <button class="btn btn-danger btn-sm" (click)="eliminaUtente(user)">
         <i class="bi bi-trash-fill"></i> ELIMINA
       </button>
@@ -9,13 +9,25 @@
   </div>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
       <button
         class="btn btn-primary btn-sm"
         style="margin-top:5px"
         (click)="modificaUtente(user)"
       >
         <i class="bi bi-pencil-fill"></i>MODIFICA
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <button
+        class="btn btn-light btn-sm"
+        style="margin-top:5px"
+        (click)="visualizzaUtente(user)"
+      >
+        <i class="bi bi-eye-fill"></i>VISUALIZZA
       </button>
     </div>
   </div>

@@ -39,4 +39,8 @@ export class UserComponent implements OnInit {
     this.userModifica.emit(oggettoPerEmit);
     */
   }
+
+  visualizzaUtente(user: User): void {
+    this.route.navigate(['users', user?.id]);
+  }
 }

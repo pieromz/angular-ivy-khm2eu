@@ -12,19 +12,6 @@
   /*margin-left: 50px;*/
 }
 
-.linkHomePAge {
-  color: red;
-  font-size: 1.2rem;
-  cursor: pointer;
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 30px;
-}
-
-.linkHomePAge:hover {
-  color: hotpink;
-  text-decoration: underline;
-}
 
 .containerPulsantiDettaglioFormCliente {
   margin-top: 20px;
@@ -62,4 +49,19 @@
   /*margin-left: 10%;*/
   cursor: pointer;
   /*float: left;*/
+}
+
+
+.linkHomePAge {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.linkHomePAge:hover {
+  color: hotpink;
+  text-decoration: underline;
 }

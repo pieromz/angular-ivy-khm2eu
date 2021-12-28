@@ -1,3 +1,105 @@
-<p>
-  {{ dettaglioUtente | json }}
-</p>
+<h1 (click)="tornaHomePage()" class="linkHomePAge">TORNA HOME</h1>
+
+<div class="form-group">
+  <label for="idUtente">ID:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.id"
+    name="idUtente"
+    id="idUtente"
+    type="number"
+    disabled="true"
+    class="form-control"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="nomeUtente">Nome:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.nome"
+    name="nomeUtente"
+    id="nomeUtente"
+    type="text"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="cognomeUtente">Cognome:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.cognome"
+    name="cognomeUtente"
+    id="cognomeUtente"
+    type="text"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="cfUtente">CF:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.cf"
+    name="cfUtente"
+    id="cfUtente"
+    type="text"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="emailUtente">Email:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.email"
+    name="emailUtente"
+    id="emailUtente"
+    type="email"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="telefonoUtente">Telefono:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.telefono"
+    name="telefonoUtente"
+    id="telefonoUtente"
+    type="tel"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="comuneUtente">Comune:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.comune"
+    name="comuneUtente"
+    id="comuneUtente"
+    type="text"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
+
+<div class="form-group">
+  <label for="etaUtente">Età:</label>
+  <input
+    [(ngModel)]="dettaglioUtente.eta"
+    name="etaUtente"
+    id="etaUtente"
+    type="number"
+    class="form-control"
+    disabled="true"
+    style="margin-left: 0;"
+  />
+</div>
