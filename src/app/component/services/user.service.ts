@@ -40,6 +40,15 @@ export class UserService {
     return this.users;
   }
 
+  getUserById(id: number) {
+    const idx = this.users.findIndex((v) => v.id == id);
+    if (idx >= 0) {
+      return this.users[idx];
+    } else {
+      return null;
+    }
+  }
+
   cancellaUtente(utente: any): void {
     const indiceDaEliminare = this.users.indexOf(utente);
     if (indiceDaEliminare >= 0) {

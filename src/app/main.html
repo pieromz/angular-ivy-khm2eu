@@ -1,6 +1,15 @@
 <!--NAV BAR-->
 <app-navbar (onClickNewUser)="aggiungiUtenteDaHeader($event)"></app-navbar>
 
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!--
 <div class="mainDiv container">
   <div class="usersDiv">
     <app-users
@@ -34,8 +43,13 @@
     ></app-user-detail>
   </div>
 </div>
+-->
 
 <br /><br /><br />
+<h1>--------------------------------------------</h1>
+<h1 style="color: red; text-align: center; padding: 20px">
+  INIZIO SEZIONE MIA PERSONALE
+</h1>
 
 <div class="container">
   <div class="row">

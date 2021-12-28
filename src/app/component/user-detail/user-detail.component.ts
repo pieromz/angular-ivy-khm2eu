@@ -5,6 +5,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../class/user';
 import { UserService } from '../services/user.service';
 
@@ -17,9 +18,13 @@ export class UserDetailComponent implements OnInit, OnChanges {
   @Input('user-selected') utenteSelezionato: boolean | undefined;
   @Input('utente-da-modificare') utenteForm: User;
 
-  constructor(private service: UserService) {}
+  constructor(private service: UserService, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+    });
+  }
 
   annullaModificaUtente(form) {
     this.svuotaCampiForm(form);

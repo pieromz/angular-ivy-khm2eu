@@ -5,15 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 //import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 //COMPONENTI
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
 import { TabellaComponent } from './component/tabella';
 import { AlertComponent } from './component/alert';
 import { FormComponent } from './component/form';
+/*import { UserComponent } from './component/user/user.component';
 import { UsersComponent } from './component/users/users.component';
-import { UserComponent } from './component/user/user.component';
-import { UserDetailComponent } from './component/user-detail/user-detail.component';
+import { UserDetailComponent } from './component/user-detail/user-detail.component';*/
 import { NavbarComponent } from './component/navbar/navbar.component';
 //SERVIZI
 import { LogService } from './shared/log.service';
@@ -25,6 +26,7 @@ import { UserService } from './component/services/user.service';
     BrowserModule,
     /*AppRoutingModule,*/ FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
@@ -33,9 +35,9 @@ import { UserService } from './component/services/user.service';
     TabellaComponent,
     AlertComponent,
     FormComponent,
+    /*UserComponent,
     UsersComponent,
-    UserComponent,
-    UserDetailComponent,
+    UserDetailComponent,*/
     NavbarComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
