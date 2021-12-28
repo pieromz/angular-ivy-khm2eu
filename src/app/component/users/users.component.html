@@ -1,60 +1,91 @@
-<h5>INIZIO COMPONENTE USERS</h5>
-<br /><br />
+<div class="row">
+  <h5>DATA CURRENT: {{ dataOdierna | date: 'dd/mm/yyyy HH:mm:ss' }}</h5>
+</div>
+<div class="row">
+  <h5>DATA SHORT: {{ dataOdierna | date: 'long' }}</h5>
+</div>
+<div class="row">
+  <div class="col-3">
+    <p>Aggiorna orario</p>
+  </div>
+  <div class="col-6">
+    <button (click)="refreshData()" class="buttonRefreshData">
+      REFRESH DATA <i class="bi-alarm"></i>
+    </button>
+  </div>
+</div>
 
-<h5>DATA CURRENT: {{ dataOdierna | date: 'dd/mm/yyyy HH:mm:ss' }}</h5>
-<h5>DATA SHORT: {{ dataOdierna | date: 'long' }}</h5>
-<button (click)="refreshData()" class="buttonRefreshData">REFRESH DATA</button>
+<i class="bi-alarm"></i>
 
-<h1>Stringa : {{ stringProva | uppercase | titlecase }}</h1>
+<a href="https://icons.getbootstrap.com/">ICONE LINK</a>
+
+<div class="row">
+  <div class="col-12">
+    <h1>Stringa : {{ stringProva | uppercase | titlecase }}</h1>
+  </div>
+</div>
 <!--Titlecase = Prima lettere di ogni parola in Maiuscolo-->
 
-<table>
-  <caption class="captionTableUtenti">
-    {{
-      footerTable
-    }}
-    - Tot Elements =
-    {{
-      users.length
-    }}
-  </caption>
-  <tr>
-    <th class="thTabellaUtenti">AZIONE</th>
-    <th class="thTabellaUtenti">ID</th>
-    <th class="thTabellaUtenti">NOME</th>
-    <th class="thTabellaUtenti">COGNOME</th>
-    <th class="thTabellaUtenti">CF</th>
-    <th class="thTabellaUtenti">EMAIL</th>
-    <th class="thTabellaUtenti">TELEFONO</th>
-    <th class="thTabellaUtenti">COMUNE</th>
-    <th class="thTabellaUtenti">ETA'</th>
-  </tr>
+<div class="row">
+  <table class="table-primary">
+    <caption class="captionTableUtenti">
+      {{
+        footerTable
+      }}
+      - Tot Elements =
+      {{
+        users.length
+      }}
+    </caption>
+    <thead>
+      <tr class="table-primary">
+        <th scope="col" class="thTabellaUtenti">AZIONE</th>
+        <th scope="col" class="thTabellaUtenti">ID</th>
+        <th scope="col" class="thTabellaUtenti">NOME</th>
+        <th scope="col" class="thTabellaUtenti">COGNOME</th>
+        <th scope="col" class="thTabellaUtenti">CF</th>
+        <th scope="col" class="thTabellaUtenti">EMAIL</th>
+        <th scope="col" class="thTabellaUtenti">TELEFONO</th>
+        <th scope="col" class="thTabellaUtenti">COMUNE</th>
+        <th scope="col" class="thTabellaUtenti">ETA'</th>
+      </tr>
+    </thead>
 
-  <!--
-  <tr *ngFor="let user of users">
-    <td class="tdTabellaUtenti">{{ user.id }}</td>
-    <td class="tdTabellaUtenti">{{ user.nome }}</td>
-    <td class="tdTabellaUtenti">{{ user.cognome }}</td>
-    <td class="tdTabellaUtenti">{{ user.cf }}</td>
-    <td class="tdTabellaUtenti">{{ user.email }}</td>
-    <td class="tdTabellaUtenti">{{ user.telefono }}</td>
-    <td class="tdTabellaUtenti">{{ user.comune }}</td>
-    <td class="tdTabellaUtenti">{{ user.eta }}</td>
-  </tr>
--->
+    <!--
+      <tr *ngFor="let user of users">
+        <td class="tdTabellaUtenti">{{ user.id }}</td>
+        <td class="tdTabellaUtenti">{{ user.nome }}</td>
+        <td class="tdTabellaUtenti">{{ user.cognome }}</td>
+        <td class="tdTabellaUtenti">{{ user.cf }}</td>
+        <td class="tdTabellaUtenti">{{ user.email }}</td>
+        <td class="tdTabellaUtenti">{{ user.telefono }}</td>
+        <td class="tdTabellaUtenti">{{ user.comune }}</td>
+        <td class="tdTabellaUtenti">{{ user.eta }}</td>
+      </tr>
+    -->
+    <tbody>
+      <tr
+        class="table-primary"
+        app-user
+        *ngFor="let utente of users"
+        [user-data]="utente"
+        (onDeleteUser)="eliminaUtenteDaComponentFiglio($event)"
+        (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
+      ></tr>
+    </tbody>
+  </table>
+</div>
 
-  <tr
-    app-user
-    *ngFor="let utente of users"
-    [user-data]="utente"
-    (onDeleteUser)="eliminaUtenteDaComponentFiglio($event)"
-    (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
-  ></tr>
-</table>
-
-<button class="buttonAddClienteBase" (click)="addUtenteBase()" title="+ Utente">
-  ADD CLIENTE BASE
-</button>
+<div class="row">
+  <div class="col-12">
+    <button
+      class="buttonAddClienteBase"
+      (click)="addUtenteBase()"
+      title="+ Utente"
+    >
+      ADD CLIENTE BASE
+    </button>
+  </div>
+</div>
 
 <br /><br />
-<h5>FINE COMPONENTE USERS</h5>

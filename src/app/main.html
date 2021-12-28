@@ -1,21 +1,27 @@
-<div class="mainDiv">
+<div class="mainDiv container">
   <div class="usersDiv">
     <app-users
       [user-selected]="utenteSelezionato"
       (onUpdateUser)="modificaUtenteDaComponenteFiglio($event)"
     ></app-users>
 
-    <button class="buttonAggiungiUtente" (click)="aggiungiUtenteDaForm()">
-      AGGIUNGI NUOVO UTENTE
-    </button>
+    <div class="row">
+      <div class="col-6">
+        <button class="buttonAggiungiUtente" (click)="aggiungiUtenteDaForm()">
+          AGGIUNGI NUOVO UTENTE
+        </button>
+      </div>
 
-    <button
-      *ngIf="utenteSelezionato"
-      class="buttonNascondiForm"
-      (click)="nascondiForm()"
-    >
-      NASCONDI FORM
-    </button>
+      <div class="col-6">
+        <button
+          *ngIf="utenteSelezionato"
+          class="buttonNascondiForm"
+          (click)="nascondiForm()"
+        >
+          NASCONDI FORM
+        </button>
+      </div>
+    </div>
   </div>
   <div class="detailUserDiv">
     <app-user-detail
@@ -28,19 +34,26 @@
 
 <br /><br /><br />
 
-<h1 class="titleClass">
-  <span>{{titoloApp}}</span>
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm" style="border: 5px solid red">
+      <h5>{{titoloApp}}</h5>
+    </div>
+    <div class="col-sm" style="border: 5px solid blue">
+      <h5>VERSIONE ANGULAR- {{versioneAngular}}</h5>
+    </div>
+    <div class="col-sm" style="border: 5px solid yellow">
+      <h5>Sviluppata da : {{nome}} {{cognome}}</h5>
+    </div>
+  </div>
 
-<h2>VERSIONE ANGULAR- {{versioneAngular}}</h2>
-<h3>Sviluppata da : {{nome}} {{cognome}}</h3>
+  <code>INDICE FUORI DAL TABELLA= {{indice}}</code>
+  <br />
+  <code>indiceTwoBinding FUORI DAL TABELLA= {{indiceTwoBinding}}</code>
 
-<code>INDICE FUORI DAL TABELLA= {{indice}}</code>
-<br />
-<code>indiceTwoBinding FUORI DAL TABELLA= {{indiceTwoBinding}}</code>
+  <tabella nome="{{nome}}" cognome="{{cognome}}" [indice]="indice"></tabella>
 
-<tabella nome="{{nome}}" cognome="{{cognome}}" [indice]="indice"></tabella>
+  <br /><br /><br />
 
-<br /><br /><br />
-
-<h1>FINE PAGINA TITLE.HTML</h1>
+  <h1>FINE PAGINA TITLE.HTML</h1>
+</div>
