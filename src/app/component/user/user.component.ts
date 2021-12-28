@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../class/user';
 import { UserService } from '../services/user.service';
 
@@ -12,7 +13,7 @@ export class UserComponent implements OnInit {
 
   @Output('onDeleteUser') userDeleted = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
   @Output('onUpdateUser') userModifica = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
-  constructor(private service: UserService) {}
+  constructor(private service: UserService, private route: Router) {}
 
   ngOnInit() {}
 
@@ -27,10 +28,14 @@ export class UserComponent implements OnInit {
   }
 
   modificaUtente(user: User): void {
+    //accedi alla pagina
+    this.route.navigateByUrl('/users/' + user?.id + '/edit');
+    /*
     var oggettoPerEmit = {
       utente: user,
       nomeUtente: user.nome,
     };
     this.userModifica.emit(oggettoPerEmit);
+    */
   }
 }

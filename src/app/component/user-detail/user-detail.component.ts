@@ -5,7 +5,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../class/user';
 import { UserService } from '../services/user.service';
 
@@ -18,7 +18,11 @@ export class UserDetailComponent implements OnInit, OnChanges {
   @Input('user-selected') utenteSelezionato: boolean | undefined;
   @Input('utente-da-modificare') utenteForm: User;
 
-  constructor(private service: UserService, private route: ActivatedRoute) {}
+  constructor(
+    private service: UserService,
+    private route: ActivatedRoute,
+    private routeNavigate: Router
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -50,5 +54,9 @@ export class UserDetailComponent implements OnInit, OnChanges {
 
   modificaUtente() {
     this.service.updateUser(this.utenteForm);
+  }
+
+  tornaHomePage() {
+    this.routeNavigate.navigateByUrl('/users');
   }
 }
