@@ -11,3 +11,27 @@
   color: hotpink;
   text-decoration: underline;
 }
+
+.infoStaticheUtente {
+  text-decoration: underline;
+  text-align: center;
+  color: aquamarine;
+  border-right: 5px solid rgb(255, 145, 0);
+  border-left: 5px solid rgb(255, 230, 0);
+  border-top: 5px solid rgb(0, 255, 242);
+}
+
+.infoDettaglioUtente {
+  text-align: center;
+  color: white;
+  border-right: 5px solid rgb(123, 255, 0);
+  border-top: 5px solid rgb(0, 255, 242);
+}
+
+.lastInfoDettaglioUtente {
+  border-bottom: 10px solid rgb(255, 0, 255);
+}
+
+.firstInfoDettaglioUtente {
+  border-top: 10px solid rgb(255, 0, 255);
+}

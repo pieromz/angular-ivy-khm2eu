@@ -41,6 +41,15 @@ table {
   cursor: pointer;
 }
 
+.buttonAddClienteNuovo {
+  background: rgb(75, 236, 75);
+  color: black;
+  border: 2px solid green;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
 .buttonRefreshData {
   background: rgba(0, 255, 115, 0.973);
   color: blue;

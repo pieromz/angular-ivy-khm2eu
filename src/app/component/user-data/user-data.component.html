@@ -1,105 +1,40 @@
 <h1 (click)="tornaHomePage()" class="linkHomePAge">TORNA HOME</h1>
 
-<div class="form-group">
-  <label for="idUtente">ID:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.id"
-    name="idUtente"
-    id="idUtente"
-    type="number"
-    disabled="true"
-    class="form-control"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="nomeUtente">Nome:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.nome"
-    name="nomeUtente"
-    id="nomeUtente"
-    type="text"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="cognomeUtente">Cognome:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.cognome"
-    name="cognomeUtente"
-    id="cognomeUtente"
-    type="text"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="cfUtente">CF:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.cf"
-    name="cfUtente"
-    id="cfUtente"
-    type="text"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="emailUtente">Email:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.email"
-    name="emailUtente"
-    id="emailUtente"
-    type="email"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="telefonoUtente">Telefono:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.telefono"
-    name="telefonoUtente"
-    id="telefonoUtente"
-    type="tel"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="comuneUtente">Comune:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.comune"
-    name="comuneUtente"
-    id="comuneUtente"
-    type="text"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
-
-<div class="form-group">
-  <label for="etaUtente">Età:</label>
-  <input
-    [(ngModel)]="dettaglioUtente.eta"
-    name="etaUtente"
-    id="etaUtente"
-    type="number"
-    class="form-control"
-    disabled="true"
-    style="margin-left: 0;"
-  />
-</div>
+<table class="table table-dark">
+  <tr>
+    <td class="infoStaticheUtente firstInfoDettaglioUtente">ID</td>
+    <td class="infoDettaglioUtente firstInfoDettaglioUtente">
+      {{ dettaglioUtente.id }}
+    </td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">NOME</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.nome }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">COGNOME</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.cognome }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">CODICE FISCALE</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.cf }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">EMAIL</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.email }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">TELEFONO</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.telefono }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente">COMUNE</td>
+    <td class="infoDettaglioUtente">{{ dettaglioUtente.comune }}</td>
+  </tr>
+  <tr>
+    <td class="infoStaticheUtente lastInfoDettaglioUtente">ETA</td>
+    <td class="infoDettaglioUtente lastInfoDettaglioUtente">
+      {{ dettaglioUtente.eta }}
+    </td>
+  </tr>
+</table>

@@ -21,8 +21,6 @@ export class UserDetailComponent implements OnInit, OnChanges {
   public utenteSelezionato: boolean | undefined;
   public utenteForm: User;
 
-  public utenti: Array<User> = [];
-
   constructor(
     private service: UserService,
     private route: ActivatedRoute,
@@ -30,7 +28,6 @@ export class UserDetailComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit() {
-    this.utenti = this.service.getUsers();
     this.route.params.subscribe((params) => {
       if (params.id != undefined && params.id != null) {
         this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
@@ -41,7 +38,7 @@ export class UserDetailComponent implements OnInit, OnChanges {
   }
 
   annullaModificaUtente(form) {
-    this.svuotaCampiForm(form);
+    this.routeNavigate.navigateByUrl('/users');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -49,6 +46,7 @@ export class UserDetailComponent implements OnInit, OnChanges {
   }
 
   svuotaCampiForm(form) {
+    this.utenteForm = this.service.getUtenteBasePerInserimento();
     form.reset();
   }
 
@@ -56,7 +54,6 @@ export class UserDetailComponent implements OnInit, OnChanges {
     if (this.utenteForm.id == undefined) {
       this.service.insertUser(this.utenteForm);
       this.utenteForm = new User();
-      this.utenti = this.service.getUsers();
       this.routeNavigate.navigateByUrl('/users');
     } else {
       this.modificaUtente();
