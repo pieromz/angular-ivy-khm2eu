@@ -35,7 +35,17 @@ export class UsersComponent implements OnInit {
   }
 
   eliminaUtenteDaComponentFiglio(oggettoPerEmit: any): void {
-    this.service.cancellaUtente(oggettoPerEmit.utente);
+    //this.service.cancellaUtente(oggettoPerEmit.utente);
+    this.service.cancellaUtente(oggettoPerEmit.utente).subscribe((res) => {
+      if (res.success) {
+        console.log(res.message);
+        this.service.getUsers().subscribe((res) => {
+          this.users = res['data'];
+        });
+      } else {
+        alert(res.message);
+      }
+    });
   }
 
   modificaUtenteDaComponenteFiglio(oggettoPerEmit: any): void {
@@ -45,7 +55,18 @@ export class UsersComponent implements OnInit {
   }
 
   addUtenteBase(): void {
-    this.service.addUtenteBase();
+    //this.service.addUtenteBase();
+
+    this.service.addUtenteBase().subscribe((res) => {
+      if (res.success) {
+        console.log(res.message);
+        this.service.getUsers().subscribe((res) => {
+          this.users = res['data'];
+        });
+      } else {
+        alert(res.message);
+      }
+    });
   }
 
   /*INIZIO AGGIORNAMENTO DATA*/

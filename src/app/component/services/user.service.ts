@@ -69,6 +69,28 @@ export class UserService {
     );
   }
 
+  insertUser(user: User) {
+    return this.http.post<UserResponse>(this.ApiUrlUsers, user);
+  }
+
+  addUtenteBase() {
+    var utenteBase = {
+      id: null,
+      nome: 'UTENTE',
+      cognome: 'BASE',
+      cf: 'BASE CF',
+      email: 'utente.base@libero.it',
+      telefono: '555555555',
+      comune: 'Base',
+      eta: 99,
+    };
+    return this.http.post<UserResponse>(this.ApiUrlUsers, utenteBase);
+  }
+
+  cancellaUtente(utente: any) {
+    return this.http.delete<UserResponse>(this.ApiUrlUsers + '/' + utente.id);
+  }
+
   /*VECCHI SERVIZI STATICI
 
   getUsers() {
@@ -110,20 +132,7 @@ export class UserService {
     this.users.push(utenteBase);
   }
 
-  getUtenteBasePerInserimento(): User {
-    var utenteBase = {
-      id: null,
-      nome: '',
-      cognome: '',
-      cf: '',
-      email: '',
-      telefono: '',
-      comune: '',
-      eta: null,
-    };
-    return utenteBase;
-  }
-
+ 
   updateUser(user: User) {
     const idx = this.users.findIndex((v) => v.id == user.id);
     if (idx >= 0) {
@@ -139,30 +148,6 @@ export class UserService {
   }
   
   */
-
-  cancellaUtente(utente: any): void {
-    const indiceDaEliminare = this.users.indexOf(utente);
-    if (indiceDaEliminare >= 0) {
-      this.users.splice(indiceDaEliminare, 1);
-    } else {
-      alert('UTENTE NON PRESENTE!!!');
-    }
-  }
-
-  addUtenteBase(): void {
-    var utenteBase = {
-      id: this.getNextId(),
-      nome: 'UTENTE',
-      cognome: 'BASE',
-      cf: 'BASE CF',
-      email: 'utente.base@libero.it',
-      telefono: '555555555',
-      comune: 'Base',
-      eta: 99,
-    };
-
-    this.users.push(utenteBase);
-  }
 
   getUtenteBasePerInserimento(): User {
     var utenteBase = {
@@ -184,11 +169,6 @@ export class UserService {
       nextId = this.users[a].id;
     }
     return nextId + 1;
-  }
-
-  insertUser(user: User) {
-    user.id = this.getNextId();
-    this.users.push(user);
   }
 
   constructor(private http: HttpClient) {}

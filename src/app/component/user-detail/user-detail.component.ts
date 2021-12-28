@@ -56,9 +56,17 @@ export class UserDetailComponent implements OnInit, OnChanges {
 
   salvaUtente() {
     if (this.utenteForm.id == undefined) {
-      this.service.insertUser(this.utenteForm);
-      this.utenteForm = new User();
-      this.routeNavigate.navigateByUrl('/users');
+      //this.service.insertUser(this.utenteForm);
+
+      this.service.insertUser(this.utenteForm).subscribe((res) => {
+        if (res.success) {
+          console.log(res.message);
+          this.utenteForm = new User();
+          this.routeNavigate.navigateByUrl('/users');
+        } else {
+          alert(res.message);
+        }
+      });
     } else {
       this.modificaUtente();
       this.utenteForm = new User();
@@ -73,7 +81,7 @@ export class UserDetailComponent implements OnInit, OnChanges {
         console.log(res.message);
         this.tornaHomePage();
       } else {
-        console.error(res.message);
+        alert(res.message);
       }
     });
   }
