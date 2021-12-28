@@ -58,5 +58,6 @@ export class UserDetailComponent implements OnInit, OnChanges {
 
   tornaHomePage() {
     this.routeNavigate.navigateByUrl('/users');
+    
   }
 }
