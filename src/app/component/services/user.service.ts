@@ -1,9 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../class/user';
 
+interface UserResponse {
+  data: User[];
+  message: string;
+}
+
 @Injectable()
 export class UserService {
-  users: Array<User> = [
+  users: Array<User> = [];
+  private ApiUrlUsers = 'http://127.0.0.1:8000/users';
+
+  /*users: Array<User> = [
     {
       id: 1,
       nome: 'PIERO',
@@ -35,9 +44,12 @@ export class UserService {
       eta: 72,
     },
   ];
+  */
 
   getUsers() {
-    return this.users;
+    return this.http.get<UserResponse>(this.ApiUrlUsers);
+
+    //return this.users;
   }
 
   getUserById(id: number) {
@@ -109,5 +121,5 @@ export class UserService {
     this.users.push(user);
   }
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 }

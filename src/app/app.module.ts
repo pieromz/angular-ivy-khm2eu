@@ -20,6 +20,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
 import { UserService } from './component/services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { UserService } from './component/services/user.service';
     /*AppRoutingModule,*/ FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO

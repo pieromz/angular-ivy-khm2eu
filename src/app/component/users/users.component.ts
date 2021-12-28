@@ -23,7 +23,14 @@ export class UsersComponent implements OnInit {
 
   constructor(private service: UserService, private routeNavigate: Router) {}
   ngOnInit(): void {
-    this.users = this.service.getUsers();
+    /*this.users = this.service.getUsers().subscribe((res) => {
+      this.users = res['data'];
+    });*/
+
+    this.service.getUsers().subscribe((res) => {
+      this.users = res['data'];
+    });
+
     this.dataOdierna = new Date();
     /*if (this.users.length > 0) {
       this.users.splice(0, 1); //rimuovo il primo elemento della lista di utenti se presente almeno un utente

@@ -8,6 +8,7 @@ import { UserDataComponent } from './component/user-data/user-data.component';
 
 import { FormsModule } from '@angular/forms';
 import { UserService } from './component/services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   {
     path: 'users',
@@ -40,7 +41,12 @@ const routes: Routes = [
     UserDetailComponent,
     UserDataComponent,
   ],
-  imports: [RouterModule.forRoot(routes), FormsModule, CommonModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+  ],
   exports: [RouterModule],
   providers: [UserService],
 })
