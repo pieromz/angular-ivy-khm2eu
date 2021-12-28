@@ -2,9 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../class/user';
 
-interface UserResponse {
+interface UsersResponse {
   data: User[];
   message: string;
+  success: boolean;
+}
+
+interface UserResponse {
+  data: User;
+  message: string;
+  success: boolean;
 }
 
 @Injectable()
@@ -47,19 +54,91 @@ export class UserService {
   */
 
   getUsers() {
-    return this.http.get<UserResponse>(this.ApiUrlUsers);
-
-    //return this.users;
+    return this.http.get(this.ApiUrlUsers);
+    //return this.http.get<UsersResponse>(this.ApiUrlUsers);
   }
 
   getUserById(id: number) {
+    return this.http.get<UserResponse>(this.ApiUrlUsers + '/' + id);
+  }
+
+  updateUser(user: User) {
+    return this.http.patch<UserResponse>(
+      this.ApiUrlUsers + '/' + user.id,
+      user
+    );
+  }
+
+  /*VECCHI SERVIZI STATICI
+
+  getUsers() {
+    return this.users;
+  }
+  
+  getUserById(id: number) {
     const idx = this.users.findIndex((v) => v.id == id);
     if (idx >= 0) {
-      return this.users[idx];
+      return this.http.get<UserResponse>(this.ApiUrlUsers + '/' + idx);
+      //return this.users[idx];
     } else {
       return null;
     }
   }
+
+
+  cancellaUtente(utente: any): void {
+    const indiceDaEliminare = this.users.indexOf(utente);
+    if (indiceDaEliminare >= 0) {
+      this.users.splice(indiceDaEliminare, 1);
+    } else {
+      alert('UTENTE NON PRESENTE!!!');
+    }
+  }
+  
+  addUtenteBase(): void {
+    var utenteBase = {
+      id: this.getNextId(),
+      nome: 'UTENTE',
+      cognome: 'BASE',
+      cf: 'BASE CF',
+      email: 'utente.base@libero.it',
+      telefono: '555555555',
+      comune: 'Base',
+      eta: 99,
+    };
+
+    this.users.push(utenteBase);
+  }
+
+  getUtenteBasePerInserimento(): User {
+    var utenteBase = {
+      id: null,
+      nome: '',
+      cognome: '',
+      cf: '',
+      email: '',
+      telefono: '',
+      comune: '',
+      eta: null,
+    };
+    return utenteBase;
+  }
+
+  updateUser(user: User) {
+    const idx = this.users.findIndex((v) => v.id == user.id);
+    if (idx >= 0) {
+      this.users[idx] = user;
+    } else {
+      alert('UTENTE DA MODIFICARE NON PRESENTE!!!');
+    }
+  }
+
+  insertUser(user: User) {
+    user.id = this.getNextId();
+    this.users.push(user);
+  }
+  
+  */
 
   cancellaUtente(utente: any): void {
     const indiceDaEliminare = this.users.indexOf(utente);
@@ -105,15 +184,6 @@ export class UserService {
       nextId = this.users[a].id;
     }
     return nextId + 1;
-  }
-
-  updateUser(user: User) {
-    const idx = this.users.findIndex((v) => v.id == user.id);
-    if (idx >= 0) {
-      this.users[idx] = user;
-    } else {
-      alert('UTENTE DA MODIFICARE NON PRESENTE!!!');
-    }
   }
 
   insertUser(user: User) {

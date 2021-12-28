@@ -30,7 +30,11 @@ export class UserDetailComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params.id != undefined && params.id != null) {
-        this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+        //this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+
+        this.service.getUserById(params.id).subscribe((res) => {
+          this.utenteForm = res.data;
+        });
       } else {
         this.utenteForm = this.service.getUtenteBasePerInserimento();
       }
@@ -62,7 +66,16 @@ export class UserDetailComponent implements OnInit, OnChanges {
   }
 
   modificaUtente() {
-    this.service.updateUser(this.utenteForm);
+    //this.service.updateUser(this.utenteForm);
+
+    this.service.updateUser(this.utenteForm).subscribe((res) => {
+      if (res.success) {
+        console.log(res.message);
+        this.tornaHomePage();
+      } else {
+        console.error(res.message);
+      }
+    });
   }
 
   tornaHomePage() {

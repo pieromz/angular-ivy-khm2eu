@@ -19,7 +19,11 @@ export class UserDataComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.dettaglioUtente = this.service.getUserById(+params.id); //+ implica il cast a number
+      this.service.getUserById(+params.id).subscribe((res) => {
+        this.dettaglioUtente = res.data;
+      });
+
+      //this.dettaglioUtente = this.service.getUserById(+params.id); //+ implica il cast a number
     });
   }
 

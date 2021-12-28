@@ -23,10 +23,7 @@ export class UsersComponent implements OnInit {
 
   constructor(private service: UserService, private routeNavigate: Router) {}
   ngOnInit(): void {
-    /*this.users = this.service.getUsers().subscribe((res) => {
-      this.users = res['data'];
-    });*/
-
+    //ESEMPIO PER CHIAMATA HTTP IN GET
     this.service.getUsers().subscribe((res) => {
       this.users = res['data'];
     });
