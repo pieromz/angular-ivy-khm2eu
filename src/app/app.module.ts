@@ -14,6 +14,7 @@ import { FormComponent } from './component/form';
 import { UsersComponent } from './component/users/users.component';
 import { UserComponent } from './component/user/user.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 //SERVIZI
 import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
@@ -35,6 +36,7 @@ import { UserService } from './component/services/user.service';
     UsersComponent,
     UserComponent,
     UserDetailComponent,
+    NavbarComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
   providers: [LogService, DatePipe, UserService],

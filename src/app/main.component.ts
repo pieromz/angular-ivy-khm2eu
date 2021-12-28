@@ -31,6 +31,10 @@ export class MainComponent {
     this.utenteSelezionato = true;
   }
 
+  aggiungiUtenteDaHeader(oggettoPerEmit: User): void {
+    this.aggiungiUtenteDaForm();
+  }
+
   nascondiForm() {
     this.utenteSelezionato = false;
   }
