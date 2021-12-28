@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './component/user/user.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
 import { UsersComponent } from './component/users/users.component';
+import { UserDataComponent } from './component/user-data/user-data.component';
+
 import { FormsModule } from '@angular/forms';
 import { UserService } from './component/services/user.service';
 const routes: Routes = [
@@ -25,10 +27,19 @@ const routes: Routes = [
     path: 'users/:id/edit',
     component: UserDetailComponent,
   },
+  {
+    path: 'users/:id',
+    component: UserDataComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [UsersComponent, UserComponent, UserDetailComponent],
+  declarations: [
+    UsersComponent,
+    UserComponent,
+    UserDetailComponent,
+    UserDataComponent,
+  ],
   imports: [RouterModule.forRoot(routes), FormsModule, CommonModule],
   exports: [RouterModule],
   providers: [UserService],

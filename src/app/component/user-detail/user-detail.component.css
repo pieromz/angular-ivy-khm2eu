@@ -12,15 +12,34 @@
   /*margin-left: 50px;*/
 }
 
+.linkHomePAge {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.linkHomePAge:hover {
+  color: hotpink;
+  text-decoration: underline;
+}
+
+.containerPulsantiDettaglioFormCliente {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .buttonSalvaUtente {
   text-align: center;
   border: 2px solid black;
   background: green;
   color: white;
   font-weight: bold;
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   cursor: pointer;
-  float: left;
+  /*float: left;*/
 }
 
 .cancellaFormUtente {
@@ -29,9 +48,9 @@
   background: red;
   color: white;
   font-weight: bold;
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   cursor: pointer;
-  float: left;
+  float: right;
 }
 
 .pulisciFormUtente {
@@ -40,7 +59,7 @@
   background: white;
   color: black;
   font-weight: bold;
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   cursor: pointer;
-  float: left;
+  /*float: left;*/
 }

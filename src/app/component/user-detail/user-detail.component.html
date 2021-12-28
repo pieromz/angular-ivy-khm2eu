@@ -1,23 +1,29 @@
 <div>
-  <h1 (click)="tornaHomePage()" style="color:red;cursor:pointer;">
-    TORNA HOME
-  </h1>
+  <h1 (click)="tornaHomePage()" class="linkHomePAge">TORNA HOME</h1>
 
   <h1>
     UTENTE (ID {{ utenteForm.id }}) - {{ utenteForm.nome }}
     {{ utenteForm.cognome }}
   </h1>
 
-  <div class="form-group" style="height: 80px;">
-    <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
+  <div class="row containerPulsantiDettaglioFormCliente">
+    <div class="col-4">
+      <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
+    </div>
+    <div class="col-4">
+      <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
+        PULISCI FORM
+      </button>
+    </div>
 
-    <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
-      PULISCI FORM
-    </button>
-
-    <button class="cancellaFormUtente" (click)="annullaModificaUtente(f.form)">
-      ANNULLA
-    </button>
+    <div class="col-4">
+      <button
+        class="cancellaFormUtente"
+        (click)="annullaModificaUtente(f.form)"
+      >
+        ANNULLA
+      </button>
+    </div>
   </div>
 
   <form #f="ngForm">
@@ -120,15 +126,23 @@
     </div>
   </form>
 
-  <div class="form-group" style="height: 80px;">
-    <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
+  <div class="row containerPulsantiDettaglioFormCliente">
+    <div class="col-4">
+      <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
+    </div>
+    <div class="col-4">
+      <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
+        PULISCI FORM
+      </button>
+    </div>
 
-    <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">
-      PULISCI FORM
-    </button>
-
-    <button class="cancellaFormUtente" (click)="annullaModificaUtente(f.form)">
-      ANNULLA
-    </button>
+    <div class="col-4">
+      <button
+        class="cancellaFormUtente"
+        (click)="annullaModificaUtente(f.form)"
+      >
+        ANNULLA
+      </button>
+    </div>
   </div>
 </div>

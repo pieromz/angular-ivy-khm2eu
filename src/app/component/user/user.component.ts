@@ -29,7 +29,8 @@ export class UserComponent implements OnInit {
 
   modificaUtente(user: User): void {
     //accedi alla pagina
-    this.route.navigateByUrl('/users/' + user?.id + '/edit');
+    //this.route.navigateByUrl('/users/' + user?.id + '/edit');  //METODO ALTERNATIVO
+    this.route.navigate(['users', user?.id, 'edit']); //OPZIONALE ALLA RIGA SOPRA
     /*
     var oggettoPerEmit = {
       utente: user,
