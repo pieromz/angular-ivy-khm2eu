@@ -28,11 +28,25 @@ export class UserDetailComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit() {
+    /* this.route.params può essere deprecato, meglio la soluzione sotto: this.route.paramMap
     this.route.params.subscribe((params) => {
       if (params.id != undefined && params.id != null) {
         //this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
 
         this.service.getUserById(params.id).subscribe((res) => {
+          this.utenteForm = res.data;
+        });
+      } else {
+        this.utenteForm = this.service.getUtenteBasePerInserimento();
+      }
+    });
+    */
+
+    this.route.paramMap.subscribe((params) => {
+      if (params.get('id') != undefined && params.get('id') != null) {
+        //this.utenteForm = this.service.getUserById(+params.id); //+ implica il cast a number
+        let idNumber = +params.get('id');
+        this.service.getUserById(idNumber).subscribe((res) => {
           this.utenteForm = res.data;
         });
       } else {

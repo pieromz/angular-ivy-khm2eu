@@ -18,12 +18,20 @@ export class UserDataComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    /* this.route.params può essere deprecato, meglio la soluzione sotto: this.route.paramMap
     this.route.params.subscribe((params) => {
       this.service.getUserById(+params.id).subscribe((res) => {
         this.dettaglioUtente = res.data;
       });
 
       //this.dettaglioUtente = this.service.getUserById(+params.id); //+ implica il cast a number
+    });
+    */
+
+    this.route.paramMap.subscribe((params) => {
+      this.service.getUserById(+params.get('id')).subscribe((res) => {
+        this.dettaglioUtente = res.data;
+      });
     });
   }
 
