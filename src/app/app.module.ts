@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 //import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 //COMPONENTI
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
@@ -16,6 +16,8 @@ import { FormComponent } from './component/form';
 import { UsersComponent } from './component/users/users.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';*/
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { RoutingModuleModule } from './routing-module.module';
+
 //SERVIZI
 import { LogService } from './shared/log.service';
 import { DatePipe } from '@angular/common';
@@ -25,10 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserModule,
-    /*AppRoutingModule,*/ FormsModule,
+    FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    //AppRoutingModule,
     HttpClientModule,
+    RoutingModuleModule,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
