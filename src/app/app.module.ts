@@ -24,6 +24,8 @@ import { DatePipe } from '@angular/common';
 import { UserService } from './component/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     //AppRoutingModule,
     HttpClientModule,
     RoutingModuleModule,
+    NgbModule,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
