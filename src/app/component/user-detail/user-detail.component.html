@@ -200,10 +200,16 @@
           class="form-control"
           style="margin-left: 0;"
           pattern="[0-9]*"
+          maxlength="10"
         />
+        <!--<p>{{ telID.errors | json }}</p> -->
         <div *ngIf="telID.dirty && telID.touched && telID.invalid">
           <div class="alert-danger" *ngIf="telID.invalid">
-            <p>* Campo Telefono non valido per pattern</p>
+            <p>
+              * Campo Telefono non valido per pattern ({{
+                telID.errors.pattern.requiredPattern
+              }})
+            </p>
           </div>
         </div>
       </div>
