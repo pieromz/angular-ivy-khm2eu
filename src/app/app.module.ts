@@ -12,9 +12,9 @@ import { MainComponent } from './main.component';
 import { TabellaComponent } from './component/tabella';
 import { AlertComponent } from './component/alert';
 import { FormComponent } from './component/form';
-/*import { UserComponent } from './component/user/user.component';
+import { UserComponent } from './component/user/user.component';
 import { UsersComponent } from './component/users/users.component';
-import { UserDetailComponent } from './component/user-detail/user-detail.component';*/
+import { UserDetailComponent } from './component/user-detail/user-detail.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { RoutingModuleModule } from './routing-module.module';
 
@@ -40,9 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     TabellaComponent,
     AlertComponent,
     FormComponent,
-    /*UserComponent,
+    UserComponent,
     UsersComponent,
-    UserDetailComponent,*/
+    UserDetailComponent,
     NavbarComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
