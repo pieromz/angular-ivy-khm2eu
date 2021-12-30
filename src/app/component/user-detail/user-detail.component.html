@@ -45,67 +45,167 @@
 
     <div class="form-row">
       <div class="form-group col-sm-6">
-        <label for="nomeUtente">Nome:</label>
+        <label
+          for="nomeUtente"
+          [ngClass]="{
+            classNgClassInvalid: nomeUtente.invalid,
+            classNgClassValid: !nomeUtente.invalid
+          }"
+          >* Nome:</label
+        >
         <input
+          #nomeUtente="ngModel"
           [(ngModel)]="utenteForm.nome"
           name="nomeUtente"
           id="nomeUtente"
           type="text"
           class="form-control"
           style="margin-left: 0;"
+          required="true"
+          minlength="3"
         />
+
+        <div
+          *ngIf="nomeUtente.dirty && nomeUtente.touched && nomeUtente.invalid"
+        >
+          <div class="alert-danger" *ngIf="nomeUtente.errors.required">
+            <p>* Campo Nome obbligatorio</p>
+          </div>
+          <div class="alert-danger" *ngIf="nomeUtente.errors.minlength">
+            <p>
+              * Almeno 3 caratteri ({{
+                nomeUtente.errors.minlength.actualLength | json
+              }}
+              attuali)
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="form-group col-sm-6">
-        <label for="cognomeUtente">Cognome:</label>
+        <label
+          for="cognomeUtente"
+          [ngClass]="{
+            classNgClassInvalid: cognomeUtente.invalid,
+            classNgClassValid: !cognomeUtente.invalid
+          }"
+          >* Cognome:</label
+        >
         <input
+          #cognomeUtente="ngModel"
           [(ngModel)]="utenteForm.cognome"
           name="cognomeUtente"
           id="cognomeUtente"
           type="text"
           class="form-control"
           style="margin-left: 0;"
+          required="true"
+          minlength="3"
         />
+        <div
+          *ngIf="
+            cognomeUtente.dirty &&
+            cognomeUtente.touched &&
+            cognomeUtente.invalid
+          "
+        >
+          <div class="alert-danger" *ngIf="cognomeUtente.errors.required">
+            <p>* Campo Cognome obbligatorio</p>
+          </div>
+          <div class="alert-danger" *ngIf="cognomeUtente.errors.minlength">
+            <p>
+              * Almeno 3 caratteri ({{
+                cognomeUtente.errors.minlength.actualLength | json
+              }}
+              attuali)
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-sm-6">
-        <label for="cfUtente">CF:</label>
+        <label
+          for="cfUtente"
+          [ngClass]="{
+            classNgClassInvalid: cfUtenteTag.invalid,
+            classNgClassValid: !cfUtenteTag.invalid
+          }"
+          >* CF:</label
+        >
         <input
+          #cfUtenteTag="ngModel"
           [(ngModel)]="utenteForm.cf"
           name="cfUtente"
           id="cfUtente"
           type="text"
           class="form-control"
           style="margin-left: 0;"
+          required="true"
         />
+        <div
+          *ngIf="
+            cfUtenteTag.dirty && cfUtenteTag.touched && cfUtenteTag.invalid
+          "
+        >
+          <div class="alert-danger" *ngIf="cfUtenteTag.invalid">
+            <p>* Campo CF obbligatorio</p>
+          </div>
+        </div>
       </div>
 
       <div class="form-group col-sm-6">
-        <label for="emailUtente">Email:</label>
+        <label
+          for="emailUtente"
+          [ngClass]="{
+            classNgClassInvalid: emailID.invalid
+          }"
+          >Email:</label
+        >
         <input
+          #emailID="ngModel"
           [(ngModel)]="utenteForm.email"
           name="emailUtente"
           id="emailUtente"
           type="email"
           class="form-control"
           style="margin-left: 0;"
+          email="true"
         />
+
+        <div *ngIf="emailID.dirty && emailID.touched && emailID.invalid">
+          <div class="alert-danger" *ngIf="emailID.invalid">
+            <p>* Campo Email non valido</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-sm-6">
-        <label for="telefonoUtente">Telefono:</label>
+        <label
+          for="telefonoUtente"
+          [ngClass]="{
+            classNgClassInvalid: telID.invalid
+          }"
+          >Telefono:</label
+        >
         <input
+          #telID="ngModel"
           [(ngModel)]="utenteForm.telefono"
           name="telefonoUtente"
           id="telefonoUtente"
           type="tel"
           class="form-control"
           style="margin-left: 0;"
+          pattern="[0-9]*"
         />
+        <div *ngIf="telID.dirty && telID.touched && telID.invalid">
+          <div class="alert-danger" *ngIf="telID.invalid">
+            <p>* Campo Telefono non valido per pattern</p>
+          </div>
+        </div>
       </div>
 
       <div class="form-group col-sm-6">
@@ -138,7 +238,13 @@
 
   <div class="row containerPulsantiDettaglioFormCliente">
     <div class="col-4">
-      <button class="buttonSalvaUtente" (click)="salvaUtente()">SALVA</button>
+      <button
+        [disabled]="f.invalid"
+        class="buttonSalvaUtente"
+        (click)="salvaUtente()"
+      >
+        SALVA
+      </button>
     </div>
     <div class="col-4" style="text-align: center">
       <button class="pulisciFormUtente" (click)="svuotaCampiForm(f.form)">

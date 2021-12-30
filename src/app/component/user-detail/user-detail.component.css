@@ -63,3 +63,36 @@
   color: hotpink;
   text-decoration: underline;
 }
+
+.alert-danger {
+  border: 2px solid red;
+}
+
+.alert-danger > p {
+  color: red;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+}
+
+input.ng-invalid {
+  border: 2px solid red;
+  background: rgba(255, 0, 0, 0.123);
+}
+
+input {
+  background: rgba(106, 201, 245, 0.123);
+}
+
+.buttonSalvaUtente:disabled {
+  background: gray;
+  cursor: no-drop;
+}
+
+.classNgClassInvalid {
+  color: rgb(173, 0, 0);
+}
+
+.classNgClassValid {
+  color: rgba(3, 218, 39, 0.945);
+}
