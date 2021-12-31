@@ -16,8 +16,6 @@ export class UserComponent implements OnInit {
   @Output('onDeleteUser') userDeleted = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
   @Output('onUpdateUser') userModifica = new EventEmitter(); //esplicitare un evento che verrà catturato dal padre
 
-  avvisi: Array<Alert>;
-
   constructor(private service: UserService, private route: Router) {}
 
   ngOnInit() {}
@@ -46,14 +44,6 @@ export class UserComponent implements OnInit {
   }
 
   visualizzaUtente(user: User): void {
-    this.aggiungiAlert('success', 'VISUALIZZA UTENTE CON ID ' + user.id);
     this.route.navigate(['users', user?.id]);
-  }
-
-  aggiungiAlert(t: string, m: string) {
-    var element = new Alert(t, m);
-    this.avvisi.push(element);
-
-    GlobalConstants.errori.push(element);
   }
 }

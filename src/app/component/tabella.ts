@@ -43,12 +43,45 @@ export class TabellaComponent {
     this.logger.log('Increment Metod component Tabella');
     this.indice = this.indice + 1;
     this.indiceTwoBinding = this.indiceTwoBinding + 1;
+
+    //INIZIO PROVA PROMISE
+    let p = Promise.resolve('promise resolved');
+    p.then((res) => {
+      console.log('OK ' + res);
+    }).catch((err) => {
+      console.log('KO ' + err);
+    });
+
+    let prom = new Promise(function (resolve, reject) {
+      //resolve(24);
+      //reject(24);
+      throw new Error('ERRORE!!!!');
+    });
+    prom
+      .then((a) => {
+        console.log('OK ' + a);
+      })
+      .catch((err) => {
+        console.log('KO ' + err);
+      });
+
+    //FINE PROVA PROMISE
   }
 
   decrement() {
     this.logger.log('Decrement Metod component Tabella');
     this.indice = this.indice - 1;
     this.indiceTwoBinding = this.indiceTwoBinding - 1;
+
+    //INIZIO PROVA PROMISE
+    let p = Promise.reject('promise reject');
+
+    p.then((res) => {
+      console.log('OK ' + res);
+    }).catch((err) => {
+      console.log('KO ' + err);
+    });
+    //FINE PROVA PROMISE
   }
 
   creaPersona(nome, cognome, eta, contatti) {
