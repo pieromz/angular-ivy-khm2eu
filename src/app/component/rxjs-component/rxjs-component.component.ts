@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable, of, pipe, range } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { from, Observable, of, pipe, range } from 'rxjs'; //genera uno stram
+import { filter, map, tap, switchMap } from 'rxjs/operators'; //modifica uno stream
 
 @Component({
   selector: 'app-rxjs',
@@ -52,7 +52,7 @@ export class RxjsComponentComponent implements OnInit {
     );
 
     console.error(
-      '*****************INIZIO RXJS OBSERVABLE IN CONSOLE******************'
+      '*****************INIZIO RXJS "OBSERVABLE" IN CONSOLE******************'
     );
 
     //next --> PROSSIMO VALORE CHE L'OSSERVATORE RICEVERA'
@@ -105,7 +105,64 @@ export class RxjsComponentComponent implements OnInit {
     });
 
     console.error(
-      '*****************FINE RXJS OBSERVABLE IN CONSOLE******************'
+      '*****************FINE RXJS "OBSERVABLE" IN CONSOLE******************'
+    );
+
+    console.error(
+      '*****************INIZIO RXJS "FROM" IN CONSOLE******************'
+    );
+
+    from([1, 2, 3, 4, 5, 6, 7, 8, 9])
+      .pipe(
+        filter((x) => x % 2 === 0), //numero pari (divisibile per 2)
+        tap((x) => console.log('INTO TAP = ' + x)),
+        map((x) => x * x)
+      )
+      .subscribe((ele) => {
+        console.log(ele);
+      });
+
+    console.error(
+      '*****************FINE RXJS "FROM" IN CONSOLE******************'
+    );
+
+    console.error(
+      '*****************INIZIO RXJS "PROMISE FROM" IN CONSOLE******************'
+    );
+
+    fetch('https://jsonplaceholder.typicode.com/albums')
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json[0]);
+      });
+
+    let urlPromise = 'https://jsonplaceholder.typicode.com/albums';
+    const promise = fetch(urlPromise).then((body) => {
+      return body.json();
+    });
+
+    //from ([1,2,3,4...])
+    //of (1,2,3,4)
+    from(promise) //promise contiene un array
+      .pipe(
+        switchMap((resData) => from(resData)) //cambia uno stream in un altro
+      )
+      .subscribe((ele) => {
+        console.log(ele); //logga ad uno ad uno gli oggetti dell'array
+      });
+
+    from(promise) //promise contiene un array
+      .pipe(
+        switchMap((resData) => of(...resData)) //cambia uno stream in un altro
+      )
+      .subscribe((ele) => {
+        console.log('singolo oggetto = ' + ele); //logga ad uno ad uno gli oggetti dell'array
+      });
+
+    console.error(
+      '*****************FINE RXJS "PROMISE FROM" IN CONSOLE******************'
     );
 
     /*
