@@ -31,3 +31,18 @@
   cursor: pointer;
 }
 
+.buttnoRxjsStop {
+  text-align: center;
+  margin: auto;
+  background: red;
+  color: white;
+  font-size: 3rem;
+}
+
+.buttnoRxjsStart {
+  text-align: center;
+  margin: auto;
+  background: green;
+  color: white;
+  font-size: 3rem;
+}

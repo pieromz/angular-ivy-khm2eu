@@ -47,15 +47,23 @@
 
 <br /><br /><br />
 
-<h1>--------------------------------------------</h1>
-<h1 style="color: red; text-align: center; padding: 20px">
-  INIZIO SEZIONE RXJS
-</h1>
+<h1>----------------INIZIO RXJS--------------</h1>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <button *ngIf="!avviaRxjs" class="buttnoRxjsStart" (click)="startRxjs()">
+      AVVIA RXJS
+    </button>
+    <button *ngIf="avviaRxjs" class="buttnoRxjsStop" (click)="startRxjs()">
+      STOPPA RXJS
+    </button>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
 
-<app-rxjs></app-rxjs>
+<app-rxjs *ngIf="avviaRxjs"></app-rxjs>
 
-<h1 style="color: red; text-align: center; padding: 20px">FINE SEZIONE RXJS</h1>
-<h1>--------------------------------------------</h1>
+<h1>----------------FINE RXJS--------------</h1>
 
 <h1>--------------------------------------------</h1>
 <h1 style="color: red; text-align: center; padding: 20px">

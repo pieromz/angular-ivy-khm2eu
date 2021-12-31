@@ -36,7 +36,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     RoutingModuleModule,
     NgbModule,
-    RxjsComponentComponent,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
@@ -49,6 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UsersComponent,
     UserDetailComponent,
     NavbarComponent,
+    RxjsComponentComponent,
   ],
   bootstrap: [AppComponent], //MODULO DI INGRESSO, MODULO RADICE
   providers: [LogService, DatePipe, UserService],

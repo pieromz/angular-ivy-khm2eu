@@ -13,6 +13,8 @@ export class MainComponent {
   public utenteSelezionato: boolean = false;
   public utenteDaModificare: User = new User();
 
+  public avviaRxjs: boolean = false;
+
   nome: string;
   cognome: string;
 
@@ -44,5 +46,9 @@ export class MainComponent {
       this.utenteDaModificare = oggettoPerEmit;
       this.utenteSelezionato = true;
     }
+  }
+
+  startRxjs(): void {
+    this.avviaRxjs = !this.avviaRxjs;
   }
 }
