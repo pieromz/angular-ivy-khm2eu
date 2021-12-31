@@ -17,6 +17,7 @@ import { UsersComponent } from './component/users/users.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { RoutingModuleModule } from './routing-module.module';
+import { RxjsComponentComponent } from './component/rxjs-component/rxjs-component.component';
 
 //SERVIZI
 import { LogService } from './shared/log.service';
@@ -35,6 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     RoutingModuleModule,
     NgbModule,
+    RxjsComponentComponent,
   ],
   declarations: [
     //INSERIAMO I COMPONENTI CHE CREAMO TUTTI QUI DENTRO
